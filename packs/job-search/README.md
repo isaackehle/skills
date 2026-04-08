@@ -11,57 +11,42 @@ Reusable Agent Skills for structured job-search workflows.
 - `interview-debrief` — convert notes into decisions, flags, and next steps
 - `pipeline-ops` — maintain a local workflow system for notes, scores, and reminders
 
-## Why this pack exists
+## Included support files
 
-Many job-search workflows are repetitive but poorly structured:
-- role evaluation is inconsistent
-- resume tailoring drifts into invented experience
-- interview prep is too broad
-- interview notes are hard to compare later
-
-This pack provides smaller, focused skills with shared templates so the workflow is reusable and portable across skills-compatible agents.
-
-## Structure
-
-```text
-.github/skills/     # Public project skills
-templates/          # Shared fill-in templates
-```
-
-Each skill is a folder containing a `SKILL.md` and optional supporting templates.
-
-## Public vs private
-
-This pack contains the reusable framework only.
-
-Keep private details outside the repository, such as:
-- compensation floor
-- location and commute constraints
-- schedule or accommodation needs
-- negotiation preferences
-- personal career priorities
-
-For tools that support personal skills, store those in a user-level skills folder such as `~/.copilot/skills/`.
+- `templates/` — blank files to copy and fill in
+- `examples/` — fake filled-in examples showing the expected level of detail
+- `docs/personalization.md` — how to keep personal constraints private while using the pack
 
 ## Recommended workflow
 
-1. Fill in a private candidate profile using `templates/candidate-profile.template.md`.
-2. Fill in `templates/opportunity-input.template.md` for a target job.
-3. Run `opportunity-evaluation` for a quick decision.
+1. Copy `templates/candidate-profile.template.md` to a private file outside the repo.
+2. Fill in `templates/opportunity-input.template.md` for each target role.
+3. Run `opportunity-evaluation` for a first-pass decision.
 4. If still viable, run `resume-tailoring`.
 5. Before each interview, run `interview-prep`.
-6. During the call, use `interview-note-taker`.
-7. After the call, run `interview-debrief`.
-8. Use `pipeline-ops` only for local tracking workflows.
+6. During the interview, use `interview-note-taker`.
+7. After the interview, run `interview-debrief`.
+8. Use `pipeline-ops` for local workflow maintenance only.
 
-## Design principles
+## Public vs private
 
-- Small, focused skills instead of one monolithic prompt
-- Public framework separated from private candidate context
-- Evidence-first evaluation
-- No invented experience
-- Structured outputs for easier comparison and automation
+This pack is public and reusable.
 
-## Intended compatibility
+Keep your real values in a private local file, for example:
 
-These skills are designed around the folder-based Agent Skills pattern used by GitHub Copilot and other compatible tools.
+```text
+~/.copilot/skills/job-search-personal/SKILL.md
+~/job-search-private/candidate-profile.private.md
+```
+
+Do not commit sensitive compensation, location, accommodation, or negotiation details to the public repository.
+
+## Discovery note
+
+The skills for this pack live under:
+
+```text
+packs/job-search/.github/skills/
+```
+
+That is ideal for a shared library repo, but some tools may only auto-discover skills from a root-level `.github/skills/` directory. If needed, copy or mirror this pack into its own workspace when using it directly.
