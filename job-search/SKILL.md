@@ -1,20 +1,21 @@
 ---
 name: job-search
-description: End-to-end job search workflow for opportunity evaluation, resume tailoring, interview prep, live note-taking, debriefs, and private personalization.
+description: End-to-end job search workflow skill for opportunity evaluation, resume tailoring, interview prep, live interview note-taking, debriefs, and optional private personalization.
 ---
 
 # Job Search
 
-Use this skill for structured job-search workflows.
+Use this skill for a structured job-search workflow from first-look opportunity review through interview follow-up.
 
 ## What this skill covers
+
 - Opportunity evaluation
 - Resume tailoring
 - Recruiter screen preparation
 - Interview preparation
 - Live interview note-taking
 - Post-interview debrief
-- Private personalization via a local candidate profile
+- Optional private personalization via a local candidate profile
 
 ## Inputs
 Use any that are available:
@@ -29,30 +30,50 @@ If some context is missing, continue with the best available information and exp
 
 ## Workflow routing
 
-### Opportunity evaluation
+Choose the workflow based on the user’s request.
+
+### 1. Opportunity evaluation
 Use `references/opportunity-evaluation.md`.
 
-### Resume tailoring
+### 2. Resume tailoring
 Use `references/resume-tailoring.md`.
 
-### Interview prep
+### 3. Interview prep
 Use `references/interview-prep.md`.
 
-### Live interview notes
+### 4. Live interview notes
 Use `references/interview-note-taker.md`.
 
-### Interview debrief
+### 5. Interview debrief
 Use `references/interview-debrief.md`.
 
-## Personalization
-If a private candidate profile is available, apply it before making recommendations.
+## Private personalization
 
-Suggested local private files:
-- `~/job-search-private/candidate-profile.private.md`
-- `~/.claude/skills/job-search-personal/SKILL.md`
-- `~/.config/opencode/skills/job-search-personal/SKILL.md`
+This public skill supports optional private personalization.
+
+Recommended convention:
+- Define a private config root locally.
+- Under that root, place:
+  - `job-search/candidate-profile.private.md`
+
+Examples of possible private config roots:
+- `~/Documents/ObsidianVault/private`
+- `~/Library/Mobile Documents/com~apple~CloudDocs/Documents/ObsidianVault/private`
+- any synced private directory you control
+
+Expected private profile path:
+
+```text
+<PRIVATE_CONFIG_ROOT>/job-search/candidate-profile.private.md
+```
+
+If a private candidate profile is available, apply it before making recommendations.
+If it is not available, continue using public templates and explicitly note missing personal context.
 
 Never expose private values unless the user asks.
+Never copy private profile content into public repository files.
+
+See `docs/personalization.md` for the recommended layout.
 
 ## Rules
 - Do not invent facts.
@@ -61,3 +82,9 @@ Never expose private values unless the user asks.
 - Use the relevant template from `templates/` when producing structured output.
 - Keep private user constraints out of public repo files.
 - For interview workflows, distinguish facts, interpretations, and open questions.
+
+## Included files
+- `templates/` for blank forms
+- `examples/` for non-sensitive filled examples
+- `references/` for workflow-specific guidance
+- `docs/` for setup and personalization
