@@ -59,6 +59,19 @@ A typical installation pattern is to copy a top-level skill folder into a local 
 
 The installed skill folder should contain `SKILL.md` at its root.
 
-## Notes
+## Templates
 
-Some older parts of the repository may still reflect the earlier `packs/` layout while the repo is being simplified toward top-level installable skills.
+Templates for the different areas live under the `templates` folder:
+
+```shell
+job-search/
+├── README.md
+├── SKILL.md
+├── templates/
+│   ├── candidate-profile.template.md
+│   ├── company-note.template.md
+│   ├── interview-stage.template.md
+│   ├── live-notes.template.md
+│   ├── opportunity-input.template.md
+│   └── recruiter-screen.template.md
+```

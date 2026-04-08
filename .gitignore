@@ -1,37 +1,30 @@
-# IDE / editor configs
-.vscode/
-.idea/
+# Private candidate data
+private/
+**/*.private.md
 
-# OS junk
+# Local Claude / local tool settings
+.claude/settings.local.json
+.claude/*.local.json
+
+# Obsidian / editor / OS noise
+.obsidian/
 .DS_Store
 Thumbs.db
 
-# Build artifacts
-build/
-dist/
-out/
-target/
-
-# Dependencies
-node_modules/
-vendor/
-bower_components/
-
-# Compiled files
-*.pyc
+# Python / shell noise
 __pycache__/
+*.pyc
+*.pyo
+*.swp
+*.swo
 
-# Test & coverage
-coverage/
-*.lcov
+# Generated docs / exports
+*.docx
+*.pdf
 
-# Environment / secrets
-.env
-.env.local
-config.yaml
-
-# Logs / temp
-logs/
-tmp/
-*.log
-
+# Optional: local workspace output, if your public repo includes only the skill
+_system/
+companies/
+contracting/
+niche-markets/
+source/
