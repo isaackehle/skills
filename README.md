@@ -4,57 +4,61 @@ Skills I have developed and hope others might find useful.
 
 ## Repository layout
 
-This repository is a shared library of skill packs.
+This repository is a shared library of installable skills.
 
-- `packs/job-search/` — structured workflows for job-search evaluation, resume tailoring, interview prep, live note-taking, debriefs, and pipeline operations.
-- Additional packs can be added over time for other domains.
+Each top-level skill is intended to be usable as its own grouped skill folder, typically with:
+- `SKILL.md`
+- `templates/`
+- `examples/`
+- `docs/`
+- `references/`
+- `scripts/`
 
-## How to use this repo
+## Current skills
 
-This repository is organized for browsing, reuse, and copying.
+### `job-search/`
 
-Each pack may include:
-- `.github/skills/` for the actual skill definitions
-- `templates/` for blank input files
-- `examples/` for non-sensitive sample files
-- `docs/` for usage and personalization guidance
+An end-to-end job-search workflow skill covering:
+- opportunity evaluation
+- resume tailoring
+- recruiter and interview prep
+- live interview note-taking
+- post-interview debrief
+- private personalization support
 
-## Important note on discovery
-
-Some tools only auto-discover skills from a repository root-level `.github/skills/` directory.
-
-Because this repository is a shared library of packs, many packs keep their skills nested under their own folders, such as:
-
-```text
-packs/job-search/.github/skills/
-```
-
-That makes the repo easier to organize, but it may mean you need to:
-- copy a pack into its own repo,
-- open a pack folder as the active workspace, or
-- mirror selected skills into a root-level `.github/skills/` directory
-
-if your tool requires root-level discovery.
+Key files:
+- `job-search/SKILL.md`
+- `job-search/templates/`
+- `job-search/examples/`
+- `job-search/docs/personalization.md`
+- `job-search/references/`
+- `job-search/scripts/`
 
 ## Public vs private
 
-This repo contains reusable frameworks and examples.
+This repository contains reusable skill logic and non-sensitive examples.
 
 Keep personal values outside the repo, such as:
 - compensation floor
 - exact location constraints
 - accommodation needs
-- negotiation preferences
-- personal job-search priorities
+- private negotiation preferences
+- sensitive career decision criteria
 
-## Packs
+## Installation concept
 
-### `packs/job-search`
+This repo is designed to work well as a source library.
 
-A structured job-search skill pack with:
-- opportunity evaluation
-- resume tailoring
-- interview preparation
-- interview note-taking
-- interview debrief
-- local pipeline operations
+A typical installation pattern is to copy a top-level skill folder into a local skills directory, for example:
+
+```text
+~/.claude/skills/job-search/
+~/.config/opencode/skills/job-search/
+~/.agents/skills/job-search/
+```
+
+The installed skill folder should contain `SKILL.md` at its root.
+
+## Notes
+
+Some older parts of the repository may still reflect the earlier `packs/` layout while the repo is being simplified toward top-level installable skills.
