@@ -75,3 +75,13 @@ job-search/
 │   ├── opportunity-input.template.md
 │   └── recruiter-screen.template.md
 ```
+
+
+| File                          | Purpose                                                                                       |
+| ----------------------------- | --------------------------------------------------------------------------------------------- |
+| candidate-profile.template.md | Public-safe placeholder for private candidate context and guardrails paste.txt                |
+| company-note.template.md      | Main company research/evaluation note with score, status, links, and findings paste.txt       |
+| interview-stage.template.md   | Prep + debrief doc for a specific round or stage paste.txt                                    |
+| live-notes.template.md        | In-call scratchpad for realtime capture during interviews paste.txt                           |
+| opportunity-input.template.md | Intake sheet for a new role before deep evaluation or resume tailoring paste.txt              |
+| recruiter-screen.template.md  | Specialized external recruiter screen doc with comp, timeline, and signal gathering paste.txt |
