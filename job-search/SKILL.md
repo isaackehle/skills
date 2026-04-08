@@ -1,90 +1,82 @@
 ---
 name: job-search
-description: End-to-end job search workflow skill for opportunity evaluation, resume tailoring, interview prep, live interview note-taking, debriefs, and optional private personalization.
+description: End-to-end job search workflow for opportunity evaluation, resume tailoring, interview prep, live note-taking, debriefs, and private personalization.
 ---
 
 # Job Search
 
-Use this skill for a structured job-search workflow from first-look opportunity review through interview follow-up.
+## Workflow commands
 
-## What this skill covers
-
-- Opportunity evaluation
-- Resume tailoring
-- Recruiter screen preparation
-- Interview preparation
-- Live interview note-taking
-- Post-interview debrief
-- Optional private personalization via a local candidate profile
+- **"Score this job"** -- Phase 1 opportunity analysis. Output structured scores using the 5-category framework. See `references/scoring-framework.md`.
+- **"Add to matrix"** -- Update `_system/job-matrix.json` AND `_system/company-comparison-matrix.md`. Create company file under `companies/`. Save the job posting URL in the company file. Status changes and score notes go on the company page, not in the matrix.
+- **"Tailor resume for [Company]"** -- Read `resume/experience-inventory.md` + relevant reference resume + job post. Write output to `companies/[Company]/resumes/`. See `references/resume-build-defaults.md`.
+- **"Prep for [Company] [stage]"** -- Create dated prep file under `companies/[Company]/interviews/`. See `references/scoring-framework.md`.
+- **"Search niche markets"** -- Read `niche-markets/`. Evaluate against differentiators and comp floor from private profile.
 
 ## Inputs
+
 Use any that are available:
+
 - Job description
 - Company or recruiter notes
-- Resume or base résumé
+- Reference resume document(s)
+- Experience inventory (`resume/experience-inventory.md`)
 - Candidate profile
 - Interview notes
-- Private local profile
+- Private local profile (`PRIVATE_CONFIG_ROOT/job-search/candidate-profile.private.md`)
 
 If some context is missing, continue with the best available information and explicitly list what is missing.
 
-## Workflow routing
+## Path conventions
 
-Choose the workflow based on the user’s request.
+- `PRIVATE_CONFIG_ROOT` -- private configuration and personal constraints
+- `JOB_SEARCH_WORKSPACE` -- working documents and generated artifacts
 
-### 1. Opportunity evaluation
-Use `references/opportunity-evaluation.md`.
+`JOB_SEARCH_WORKSPACE` = `~/Obsidian/Documents/primary/job_search/`
 
-### 2. Resume tailoring
-Use `references/resume-tailoring.md`.
+Expected workspace layout:
 
-### 3. Interview prep
-Use `references/interview-prep.md`.
-
-### 4. Live interview notes
-Use `references/interview-note-taker.md`.
-
-### 5. Interview debrief
-Use `references/interview-debrief.md`.
-
-## Private personalization
-
-This public skill supports optional private personalization.
-
-Recommended convention:
-- Define a private config root locally.
-- Under that root, place:
-  - `job-search/candidate-profile.private.md`
-
-Examples of possible private config roots:
-- `~/Documents/ObsidianVault/private`
-- `~/Library/Mobile Documents/com~apple~CloudDocs/Documents/ObsidianVault/private`
-- any synced private directory you control
-
-Expected private profile path:
-
-```text
-<PRIVATE_CONFIG_ROOT>/job-search/candidate-profile.private.md
+```shell
+JOB_SEARCH_WORKSPACE/
+├── _system/
+│ ├── job-matrix.json
+│ └── company-comparison-matrix.md
+├── companies/
+│ └── [Company]/
+│ ├── [Company].md
+│ ├── interviews/
+│ ├── job-descriptions/
+│ ├── people/
+│ └── resumes/
+├── resume/
+│ ├── experience-inventory.md
+│ ├── reference-resume-ai-workflows.md
+│ ├── reference-resume-embedded.md
+│ └── tailored/
+├── interviews/
+├── templates/
+├── contracting/
+├── niche-markets/
+└── archive/
 ```
 
-If a private candidate profile is available, apply it before making recommendations.
-If it is not available, continue using public templates and explicitly note missing personal context.
+## Reference files
 
-Never expose private values unless the user asks.
-Never copy private profile content into public repository files.
+- `references/scoring-framework.md`
+- `references/resume-build-defaults.md`
+- `references/ai-tooling-framing.md`
+- `references/negotiation-rules.md`
+- `references/gap-answers.md`
+- `references/coaching-guardrails.md`
+- `references/tech-stack.md`
+- `references/workspace-structure.md`
 
-See `docs/personalization.md` for the recommended layout.
+## Hard rules
 
-## Rules
-- Do not invent facts.
-- Separate evidence from inference.
-- Prefer concise structured outputs.
-- Use the relevant template from `templates/` when producing structured output.
-- Keep private user constraints out of public repo files.
-- For interview workflows, distinguish facts, interpretations, and open questions.
-
-## Included files
-- `templates/` for blank forms
-- `examples/` for non-sensitive filled examples
-- `references/` for workflow-specific guidance
-- `docs/` for setup and personalization
+- Never assume Pursuing without explicit confirmation. Default is Exploring.
+- Never let financial fit slide below comp floor without flagging it.
+- Never skip versioning on file outputs.
+- Never skip status confirmation before updating the job matrix.
+- Always check Glassdoor for nervous system validation.
+- Apply private candidate profile before making recommendations if available.
+- Never expose private profile values unless the user asks.
