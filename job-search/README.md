@@ -9,50 +9,82 @@ Grouped job-search skill for structured opportunity evaluation, resume tailoring
 - Recruiter and interview prep
 - Live interview note-taking
 - Post-interview debrief
-- Private personalization via a local candidate profile
+- Optional private personalization via a local candidate profile
 
-## Folder structure
+## Inputs
 
-- `SKILL.md` — main grouped skill definition
-- `templates/` — blank templates to copy and fill in
-- `examples/` — fake filled-in examples
-- `docs/` — setup and personalization guidance
-- `references/` — workflow-specific guidance
-- `scripts/` — helper install scripts
+Use any that are available:
 
-## How to use it
+- Job description
+- Company or recruiter notes
+- Reference resume document(s)
+- Experience inventory (source document)
+- Candidate profile
+- Interview notes
+- Private local profile
 
-Use this skill when you want one job-search workflow that can handle:
-- first-pass opportunity evaluation
-- deciding whether to pursue a role
-- tailoring a base resume to a target role
-- preparing for recruiter screens and interviews
-- taking structured notes during an interview
-- debriefing after the interview
+If some context is missing, continue with the best available information and explicitly list what is missing.
 
-## Personalization
+## Workspace conventions
 
-Keep your real candidate profile outside the repo.
+This skill expects a local job-search workspace root, referred to here as `JOB_SEARCH_WORKSPACE`.
 
-Suggested local private files:
-- `~/job-search-private/candidate-profile.private.md`
-- `~/.claude/skills/job-search-personal/SKILL.md`
-- `~/.config/opencode/skills/job-search-personal/SKILL.md`
-
-See `docs/personalization.md` for the recommended public/private split.
-
-## Install concept
-
-Copy this folder into your local skills directory so that `SKILL.md` is at the root of the installed skill folder.
-
-Examples:
+For your setup, a good mapping inside your Obsidian vault is:
 
 ```text
-~/.claude/skills/job-search/
-~/.config/opencode/skills/job-search/
-~/.agents/skills/job-search/
+JOB_SEARCH_WORKSPACE = <OBSIDIAN_VAULT>/job_search
 ```
 
-## Notes
+Recommended structure:
 
-This grouped skill is designed for tools such as Claude Code and OpenCode, where a skill is typically a folder containing `SKILL.md` plus supporting files.
+```text
+JOB_SEARCH_WORKSPACE/job-search/
+├── source/
+│   ├── experience-inventory.md
+│   ├── reference-resume-ai-workflows.md
+│   └── reference-resume-embedded.md
+├── companies/
+│   └── CompanyXYZ/
+│       ├── CompanyXYZ.md
+│       ├── CompanyXYZ-product-screenshot.png
+│       ├── interviews/
+│       ├── job-descriptions/
+│       ├── people/
+│       └── resumes/
+├── contracting/
+└── niche-markets/
+```
+
+- `source/` holds your global experience inventory and reference resumes (“stuff I’ve done”).
+- `companies/` holds per-company workspaces (like the CompanyXYZ example above).
+- `contracting/` holds contract/fractional leads, terms, notes, and templates.
+- `niche-markets/` holds research, target sectors, channels, and search experiments.
+
+## Private personalization
+
+This public skill supports optional private personalization via a separate root, `PRIVATE_CONFIG_ROOT`.
+
+Under that root, place:
+
+- `job-search/candidate-profile.private.md`
+
+Example private config roots:
+
+```text
+~/Documents/ObsidianVault/private
+~/Library/Mobile Documents/com~apple~CloudDocs/Documents/ObsidianVault/private
+```
+
+Expected private profile path:
+
+```text
+PRIVATE_CONFIG_ROOT/job-search/candidate-profile.private.md
+```
+
+If a private candidate profile is available, apply it before making recommendations.
+If it is not available, continue using public templates and explicitly note missing personal context.
+
+Never expose private values unless the user asks.
+Never copy private profile content into public repository files.
+
+See `docs/personalization.md` for more detail.
