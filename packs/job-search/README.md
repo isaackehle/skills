@@ -2,6 +2,13 @@
 
 Reusable Agent Skills for structured job-search workflows.
 
+## Quick links
+
+- `templates/`
+- `examples/`
+- `docs/personalization.md`
+- `.github/skills/`
+
 ## Included skills
 
 - `opportunity-evaluation` — evaluate a role with a 5-category scorecard
@@ -32,7 +39,7 @@ Reusable Agent Skills for structured job-search workflows.
 
 This pack is public and reusable.
 
-Keep your real values in a private local file, for example:
+Keep your real values in private local files, for example:
 
 ```text
 ~/.copilot/skills/job-search-personal/SKILL.md
