@@ -1,6 +1,9 @@
 # Candidate Profile
 
+This file stays in PRIVATE_CONFIG_ROOT — never committed to the public repo.
+
 ## Background
+
 - Target level:
 - Years of experience:
 - Core technologies:
@@ -8,31 +11,47 @@
 - Preferred role types:
 
 ## Compensation
-- Minimum TTC:
+
+- Comp floor (minimum TTC):
 - Strong-target TTC:
+- Current base:
 - Equity expectations:
-- Compensation deal-breakers:
+- Deal-breakers:
 
 ## Location
+
 - Home base:
 - Remote preference:
 - Commute radius:
-- Relocation policy:
+- Relocation: No / Case-by-case
 
-## Work style
-- Schedule constraints:
+## Work Style and Constraints
+
+- Schedule constraints (recurring protected time):
 - Travel tolerance:
 - On-call tolerance:
-- Communication preferences:
-- Accommodation preferences:
+- Async preference:
+- Accommodation needs:
 
-## Career goals
+## Career Goals
+
 - Near-term goal:
 - Long-term goal:
 - Skills to deepen:
-- Title trajectory goal:
+- Title trajectory:
 
-## Mission preferences
-- Strong alignment:
-- Neutral:
-- Avoid:
+## Mission Preferences
+
+- Strong alignment (sectors / causes):
+- Neutral (can work in):
+- Avoid (sectors / patterns):
+
+## Negotiation Notes
+
+- What matters most in an offer:
+- What I'm willing to trade for base:
+- Non-negotiables:
+
+## Context Notes
+
+*(Anything else the agent should know about your situation — burnout recovery, life constraints, sole-provider context, clearance status, etc.)*

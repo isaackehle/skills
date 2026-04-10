@@ -1,74 +1,68 @@
 # Scoring Framework
 
-## Variable Category Model
+## 5-Category Scorecard (/50)
 
-Each category is scored from **1** up to a specified maximum (e.g., 10, 5, 15). The overall score is the sum of all categories. The total possible score equals the sum of each category’s maximum.
+| Category | Priority | What It Measures | Max |
+|----------|----------|-----------------|-----|
+| Financial Fit | 1st | Base + TTC vs comp floor, equity value, company stability | 10 |
+| Technical Fit | 2nd | Stack alignment, seniority match, architectural scope, learning curve | 10 |
+| Nervous System Fit | 3rd | Management quality, toxicity risk, pace, remote flexibility, accommodation | 10 |
+| Strategic Fit | 4th | Career trajectory, resume brand, path to Staff/Principal, network access | 10 |
+| Mission Fit | 5th | Values alignment, who the company serves, leadership authenticity | 10 |
 
-| Category           | Priority | What It Measures                                                           | Max Score |
-| ------------------ | -------- | -------------------------------------------------------------------------- | --------- |
-| Financial Fit      | 1st      | Base + TTC vs comp floor, equity, stability                                | 10        |
-| Technical Fit      | 2nd      | Stack alignment, seniority match, learning curve, architectural scope      | 10        |
-| Nervous System Fit | 3rd      | Management quality, toxicity risk, pace, remote flexibility, accommodation | 10        |
-| Strategic Fit      | 4th      | Career trajectory, resume brand, path to Staff/Principal, network access   | 10        |
-| Mission Fit        | 5th      | Values alignment -- serving vulnerable populations, technical leadership   | 10        |
+## Score Bands
 
-## Thresholds
+| Total | Tier | Action |
+|-------|------|--------|
+| 40–50 | Strong Pursue | Prioritize — prepare materials and apply |
+| 35–39 | Conditional Pursue | Validate blockers before committing time |
+| 30–34 | Hold | Only proceed if unique strategic value |
+| < 30 | Decline | Not worth the energy — document and move on |
 
-| Score | Tier               | Action                                    |
-| ----- | ------------------ | ----------------------------------------- |
-| 40-50 | Strong Pursue      | Prioritize -- prepare materials and apply |
-| 35-39 | Conditional Pursue | Validate blockers before committing       |
-| <35   | Decline or Monitor | Discuss with candidate before proceeding  |
+## Scoring Guidance Per Category
 
-Flag any role where TTC cannot reasonably reach the candidate's comp floor.
+### Financial Fit (1–10)
+- **8–10:** Clearly exceeds comp floor, meaningful equity, stable company
+- **5–7:** Meets floor, questions about equity or long-term stability
+- **1–4:** Below floor, or major concerns about company ability to pay
 
-## Valid statuses
+Flag any role where TTC cannot reasonably reach the comp floor from the private profile.
 
-| Status    | Meaning               | Action                       |
-| --------- | --------------------- | ---------------------------- |
-| Exploring | Initial research      | Gather data, no commitment   |
-| Pursuing  | Active target         | Prepare materials, apply     |
-| Applied   | Application submitted | Track response               |
-| Hold      | Blocked, monitoring   | Wait for condition to change |
-| Future    | No active opening     | Monitor for openings         |
-| Rejected  | Application declined  | Archive                      |
-| Offer     | Offer received        | Evaluate and negotiate       |
-| Withdrawn | Self-withdrawn        | Document reasoning           |
+### Technical Fit (1–10)
+- **8–10:** Strong stack match, Staff/Principal-appropriate scope, real learning opportunity
+- **5–7:** Adequate match, some gaps or scope questions
+- **1–4:** Significant misalignment, wrong level, or heavy ramp with no payoff
 
-Default: Exploring -- never assume Pursuing until candidate explicitly confirms.
+### Nervous System Fit (1–10)
+- **8–10:** Evidence of good management, async-friendly, sustainable pace, accommodation-aware
+- **5–7:** Unclear signals, some concerns worth probing in interviews
+- **1–4:** Toxic signals in Glassdoor or JD, poor WLB, pace language without support signals
 
-## Status Icons
+This category is weighted heavily for burnout recovery. Trust nervous system signals as data.
 
-These icons can be used in the Job Matrix to represent each status visually. They are emojis for quick visual cues.
+### Strategic Fit (1–10)
+- **8–10:** Clear path to Principal or above, strong resume brand value, network worth building
+- **5–7:** Moderate trajectory value, some career benefit
+- **1–4:** Dead end, off-brand for the target career path, or no upward path
 
-| Status    | Icon |
-| --------- | ---- |
-| Exploring | 🔍 |
-| Pursuing  | 🚀 |
-| Applied   | 📨 |
-| Hold      | ⏸️ |
-| Future    | 📅 |
-| Rejected  | ❌ |
-| Offer     | 🎁 |
-| Withdrawn | ➡️ |
+### Mission Fit (1–10)
+- **8–10:** Direct alignment with values — serving people who need it, technical leadership with impact
+- **5–7:** Neutral or somewhat aligned — acceptable
+- **1–4:** Misaligned, extractive business model, or leadership not credible on the stated mission
 
-## Update protocol
+## Valid Statuses
 
-1. Update `_system/job-matrix.json` first -- source of truth.
-2. Regenerate `_system/company-comparison-matrix.md`.
-3. Sync individual company files.
-4. Status changes and score notes go on the company page, not in the matrix.
+| Status | Icon | Meaning | Default action |
+|--------|------|---------|---------------|
+| Exploring | 🔍 | Initial research | Gather data, no commitment |
+| Pursuing | 🚀 | Active target | Prepare materials, apply |
+| Applied | 📨 | Application submitted | Track response |
+| Screening | 📞 | Recruiter/phone screen | Active communication |
+| Interviewing | 🎯 | In interview loop | Prep and debrief each stage |
+| Hold | ⏸️ | Blocked, monitoring | Wait for condition to change |
+| Future | 📅 | No active opening | Monitor for openings |
+| Offer | 🎁 | Offer received | Evaluate and negotiate |
+| Rejected | ❌ | Application declined | Archive |
+| Withdrawn | ➡️ | Self-withdrawn | Document reasoning |
 
-## Company file structure
-
-- Quick Stats
-- 5-Category Scores
-- Mission and Product
-- Role Details
-- Compensation
-- Culture Assessment
-- Technical Assessment
-- Open Items
-- Interview Log
-- Debriefs
-- Final Decision
+**Default on add: Exploring.** Never write Pursuing without explicit user confirmation.

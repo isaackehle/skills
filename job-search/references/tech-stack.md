@@ -1,4 +1,6 @@
-# Technical Stack
+# Technical Stack Reference
+
+Use this when tailoring resumes, scoring Technical Fit, or discussing experience.
 
 ## Languages and Frameworks
 
@@ -14,9 +16,9 @@ Git, GitHub, GitHub Actions, GitLab, Bitbucket, Jenkins, npm, yarn, pnpm, bun
 
 ## Data and Architecture
 
-PostgreSQL, MongoDB, MySQL, DynamoDB, bitemporal modeling, ETL pipelines, event-driven systems, REST APIs, GraphQL
+PostgreSQL, MongoDB, MySQL, DynamoDB, bitemporal modeling, ETL pipelines, event-driven systems (SNS/SQS), REST APIs, GraphQL
 
-## Monitoring
+## Monitoring and Observability
 
 Grafana, Splunk, CloudWatch, structured logging, distributed tracing
 
@@ -28,11 +30,16 @@ OAuth2, OIDC, SAML, JWT, Auth0, Cognito, LDAP
 
 Jest, Vitest, Pytest, Mocha, Chai, Cypress, Selenium, TDD, ESLint, Prettier
 
-## AI Dev Tools
+## AI Development Tools
 
-Claimable: GitHub Copilot, Claude Code, OpenCode, Ollama
-Evaluating only (do NOT list on resume; LinkedIn is fine): LiteLLM, Amazon Bedrock
+**Claimable (list on resume):** GitHub Copilot, Claude Code, OpenCode, Ollama
+**Evaluating only (LinkedIn fine, not resume):** LiteLLM, Amazon Bedrock
 
 ## Embedded and Systems
 
-ARM, PowerPC, RTOS, Linux drivers
+ARM, PowerPC, RTOS, Linux drivers, ASIC design, firmware
+
+## Notes
+
+- See `references/ai-tooling-framing.md` for exact language on how to position AI tools
+- See `references/gap-answers.md` for scripted answers on gaps (Kafka, Go, NestJS, etc.)

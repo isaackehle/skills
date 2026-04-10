@@ -1,30 +1,35 @@
 # AI Tooling Framing
 
-Surface in every application where relevant.
+How to talk about AI development tools on the resume, in cover letters, and in interviews. Apply this whenever AI tooling is relevant to a role.
 
-## Primary resume bullet
+## Resume Bullets (Use These Verbatim or Adapt)
 
-"Leveraged AI-assisted development (Claude Code) to execute a large-scale solo refactor of the unit test suite and API architecture, modernizing a significant portion of the codebase and accelerating delivery of a complex technical initiative"
+**Primary:**
+"Leveraged AI-assisted development (Claude Code) to execute a large-scale solo refactor of the unit test suite and API architecture, modernizing a significant portion of the codebase and accelerating delivery of a complex technical initiative."
 
-## Secondary resume bullet
+**Secondary:**
+"Evaluated and championed adoption of AI development tooling across the engineering team — including agentic coding tools (Claude Code, OpenCode) and local LLM workflows (Ollama) — positioning the team at the leading edge of AI-augmented engineering practices."
 
-"Evaluated and championed adoption of AI development tooling across the engineering team -- including agentic coding tools (Claude Code, OpenCode) and local LLM workflows (Ollama) -- positioning the team at the leading edge of AI-augmented engineering practices"
+## Cover Letter Hook
 
-## Cover letter hook
+"I don't just evaluate AI tools — I use them to ship. At my last role, I used Claude Code to execute a large-scale solo refactor of our test suite and API architecture, and led the team's adoption of agentic coding workflows including OpenCode and local LLM tooling via Ollama."
 
-"I don't just evaluate AI tools -- I use them to ship. At my current role, I used Claude Code to execute a large-scale solo refactor of our test suite and API architecture, and I led the team's adoption of agentic coding workflows including OpenCode and local LLM tooling via Ollama."
+## Claimable — List on Resume
 
-## Claimable tools
+- GitHub Copilot
+- Claude Code
+- OpenCode
+- Ollama
 
-GitHub Copilot, Claude Code, OpenCode, Ollama
+## Evaluating Only — LinkedIn Fine, Resume No
 
-## Evaluating only -- never list on resume
+- LiteLLM
+- Amazon Bedrock
 
-LiteLLM, Amazon Bedrock (LinkedIn is fine)
-
-## Hard guardrails
+## Hard Guardrails
 
 - Do NOT say the candidate architected an AI-native platform at an employer
-- LiteLLM and Bedrock are evaluation-only -- never on resume
-- Do NOT imply LLM-integrated product features were built at an employer unless candidate explicitly confirms
-- Always distinguish between "used to ship" and "evaluated"
+- Do NOT imply LLM-integrated product features were built at an employer unless the candidate explicitly confirms this
+- LiteLLM and Bedrock are evaluation-only — never list on resume or claim hands-on production use
+- Always distinguish between "used to ship" and "evaluated / exploring"
+- If a role requires hands-on LLM product experience, be precise about what is claimable vs. what is a gap
