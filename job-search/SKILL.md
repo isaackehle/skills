@@ -57,7 +57,7 @@ If private profile exists, apply it before scoring or making recommendations. Ne
 ### `score this job`
 Research and score one opportunity. Load `references/opportunity-evaluation.md`.
 - Phase 1: Quick screen (comp floor, Glassdoor, funding/stability)
-- Phase 2: Deep research (5-category scorecard)
+- Phase 2: Deep research (configurable scorecard — see `references/scoring-defaults.md`)
 - Phase 3: Score and decide
 - Output: Formatted scorecard ready to paste into the position file
 
@@ -123,7 +123,8 @@ Load these on demand — only when the relevant command is invoked:
 | `references/interview-prep.md` | Preparing for an interview stage |
 | `references/interview-note-taker.md` | Live note-taking during an interview |
 | `references/interview-debrief.md` | Post-interview debrief |
-| `references/scoring-framework.md` | Score category details and thresholds |
+| `references/scoring-defaults.md` | Default scoring categories (overridable via private profile) |
+| `references/scoring-framework.md` | How to resolve config and apply decision bands |
 | `references/negotiation-rules.md` | Any comp or offer negotiation |
 | `references/gap-answers.md` | Scripted answers for tech stack gaps |
 | `references/ai-tooling-framing.md` | Framing AI tooling experience |

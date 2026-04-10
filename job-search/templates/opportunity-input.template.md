@@ -3,7 +3,7 @@
 **Company:** [[companies/[Company]/[Company]]]
 **Job ID:** JR######
 **Status:** 🔍 Exploring
-**Score:** —/50
+**Score:** —/{total}
 **First Added:** YYYY-MM-DD
 **Last Updated:** YYYY-MM-DD
 
@@ -44,14 +44,13 @@
 
 ## Scoring
 
+*(Generate this table dynamically from the active scoring config. See `references/scoring-framework.md`.)*
+
 | Category | Score | Evidence |
 |----------|-------|----------|
-| Financial Fit | /10 | |
-| Technical Fit | /10 | |
-| Nervous System Fit | /10 | |
-| Strategic Fit | /10 | |
-| Mission Fit | /10 | |
-| **TOTAL** | **/50** | |
+| {category.name} | /{category.max} | |
+| ... | | |
+| **TOTAL** | **/{total}** | |
 
 **Recommendation:**
 

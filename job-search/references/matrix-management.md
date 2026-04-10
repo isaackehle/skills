@@ -15,6 +15,8 @@ Last updated: YYYY-MM-DD
 | Company | Role | Level | Status | Score | Comp Range | Location | Source | Added | Notes |
 |---------|------|-------|--------|-------|------------|----------|--------|-------|-------|
 | [[companies/Acme/Acme]] | Staff SWE — Platform | Staff | 🔍 Exploring | 38/50 | $220k–$260k | Remote | LinkedIn | 2026-04-01 | AI platform team |
+
+*(Score denominator reflects the active scoring config total. Default is /50.)*
 ```
 
 ## Status Values
@@ -48,7 +50,7 @@ Default on add: **Exploring**. Never write Pursuing without explicit user confir
 - **Role**: Role title — link to position file if it exists
 - **Level**: IC level (Staff, Principal, Senior, etc.)
 - **Status**: Icon + text from table above
-- **Score**: X/50 from 5-category scorecard (blank if not yet scored)
+- **Score**: X/{total} from the active scoring config (blank if not yet scored)
 - **Comp Range**: Advertised or researched range in $k
 - **Location**: Remote / city / hybrid
 - **Source**: Where the role was found (LinkedIn, Greenhouse, recruiter, referral)

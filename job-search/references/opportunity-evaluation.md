@@ -1,6 +1,6 @@
 # Opportunity Evaluation
 
-Research a company thoroughly, then score it using the 5-category framework. One workflow, one decision.
+Research a company thoroughly, then score it using the configured scoring categories. One workflow, one decision.
 
 ## Phase 1: Quick Screen (Go / No-Go)
 
@@ -77,21 +77,16 @@ Use parallel agents when available — one per category is efficient. Otherwise 
 
 ## Phase 3: Score and Decide
 
-Load `references/scoring-framework.md` for full scoring criteria and thresholds.
+Load `references/scoring-framework.md` to resolve the active scoring config.
 
-Score each category 1–10 with evidence. Sum to /50.
-
-**Key questions per category:**
-
-**Financial Fit:** Is the realistic TTC above the comp floor? Is the company stable enough to pay it? Is equity actually worth something, or speculative?
-
-**Technical Fit:** Does the actual tech stack match (not just buzzwords)? Is the architectural scope appropriate for Staff/Principal level? What's the real technical debt situation?
-
-**Nervous System Fit:** What does management quality look like on LinkedIn — tenure, background? Is the pace sustainable? Is there async culture and schedule flexibility? Any accommodation signals?
-
-**Strategic Fit:** Is there a real path to Principal or above? Does this company name add resume value? Is the network worth building?
-
-**Mission Fit:** Who do they actually serve? Is the business model generative or extractive? Is leadership authentic about the mission, or is it marketing?
+1. Resolve categories from the private profile override or defaults (see `references/scoring-defaults.md`)
+2. For each category, in priority order:
+   - Score within 1 to `max` using the defined bands
+   - Answer the `key_questions` if defined
+   - Flag any `red_flag` conditions
+   - Provide specific evidence
+3. Sum to the computed total
+4. Apply decision bands from `scoring-framework.md` (percentage-based thresholds)
 
 ---
 
@@ -108,19 +103,16 @@ After each interview stage, return to the company file and:
 
 ## Output Format
 
-Paste into the position file at `companies/[Company]/job-descriptions/[Position]-[ID].md`:
+Generate dynamically from the active scoring config. Paste into the position file at `companies/[Company]/job-descriptions/[Position]-[ID].md`:
 
 ```markdown
 ## Scoring: [Company] — [Role]
 
 | Category | Score | Evidence |
 |----------|-------|----------|
-| Financial Fit | /10 | |
-| Technical Fit | /10 | |
-| Nervous System Fit | /10 | |
-| Strategic Fit | /10 | |
-| Mission Fit | /10 | |
-| **TOTAL** | **/50** | |
+| {category.name} | /{category.max} | |
+| ... | | |
+| **TOTAL** | **/{total}** | |
 
 **Recommendation:** Strong Pursue / Conditional Pursue / Hold / Decline
 
@@ -133,3 +125,5 @@ Paste into the position file at `companies/[Company]/job-descriptions/[Position]
 **Blockers (if any):**
 -
 ```
+
+Do not hardcode category names in the output — always read them from the resolved config.

@@ -1,54 +1,61 @@
 # Scoring Framework
 
-## 5-Category Scorecard (/50)
+## How Scoring Works
 
-| Category | Priority | What It Measures | Max |
-|----------|----------|-----------------|-----|
-| Financial Fit | 1st | Base + TTC vs comp floor, equity value, company stability | 10 |
-| Technical Fit | 2nd | Stack alignment, seniority match, architectural scope, learning curve | 10 |
-| Nervous System Fit | 3rd | Management quality, toxicity risk, pace, remote flexibility, accommodation | 10 |
-| Strategic Fit | 4th | Career trajectory, resume brand, path to Staff/Principal, network access | 10 |
-| Mission Fit | 5th | Values alignment, who the company serves, leadership authenticity | 10 |
+Scoring categories are **configurable**. The agent reads them at scoring time from one of two sources:
 
-## Score Bands
+1. **Private override** — `PRIVATE_CONFIG_ROOT/job-search/candidate-profile.private.md`, under `## Scoring Config`
+2. **Defaults** — `references/scoring-defaults.md`
 
-| Total | Tier | Action |
-|-------|------|--------|
-| 40–50 | Strong Pursue | Prioritize — prepare materials and apply |
-| 35–39 | Conditional Pursue | Validate blockers before committing time |
-| 30–34 | Hold | Only proceed if unique strategic value |
-| < 30 | Decline | Not worth the energy — document and move on |
+If the private profile defines a `## Scoring Config` block, it fully replaces the defaults. Otherwise, defaults apply.
 
-## Scoring Guidance Per Category
+## Resolving the Config
 
-### Financial Fit (1–10)
-- **8–10:** Clearly exceeds comp floor, meaningful equity, stable company
-- **5–7:** Meets floor, questions about equity or long-term stability
-- **1–4:** Below floor, or major concerns about company ability to pay
+```
+1. Load references/scoring-defaults.md
+2. Check private profile for ## Scoring Config
+3. If override exists → parse its scoring: yaml → use it
+4. If no override → use the defaults
+5. Sum all category max values → that's the total scale
+6. Apply decision bands (below) using the computed total
+```
 
-Flag any role where TTC cannot reasonably reach the comp floor from the private profile.
+## Generating the Scorecard
 
-### Technical Fit (1–10)
-- **8–10:** Strong stack match, Staff/Principal-appropriate scope, real learning opportunity
-- **5–7:** Adequate match, some gaps or scope questions
-- **1–4:** Significant misalignment, wrong level, or heavy ramp with no payoff
+Build the scorecard dynamically from whichever config is active:
 
-### Nervous System Fit (1–10)
-- **8–10:** Evidence of good management, async-friendly, sustainable pace, accommodation-aware
-- **5–7:** Unclear signals, some concerns worth probing in interviews
-- **1–4:** Toxic signals in Glassdoor or JD, poor WLB, pace language without support signals
+```markdown
+## Scoring: [Company] — [Role]
 
-If the candidate profile indicates burnout recovery, weight this category heavily. Nervous system signals are data, not noise.
+| Category | Score | Evidence |
+|----------|-------|----------|
+| {category.name} | /{category.max} | |
+...
+| **TOTAL** | **/{total}** | |
+```
 
-### Strategic Fit (1–10)
-- **8–10:** Clear path to Principal or above, strong resume brand value, network worth building
-- **5–7:** Moderate trajectory value, some career benefit
-- **1–4:** Dead end, off-brand for the target career path, or no upward path
+For each category, in priority order:
+- Score using the defined bands (strong / adequate / weak)
+- Answer the `key_questions` if defined
+- Flag any `red_flag` conditions
+- Provide specific evidence — never leave the Evidence column blank
 
-### Mission Fit (1–10)
-- **8–10:** Direct alignment with values — serving people who need it, technical leadership with impact
-- **5–7:** Neutral or somewhat aligned — acceptable
-- **1–4:** Misaligned, extractive business model, or leadership not credible on the stated mission
+## Decision Bands
+
+Decision bands scale with the total. Calculate thresholds as percentages of the total:
+
+| Tier | Range | Action |
+|------|-------|--------|
+| Strong Pursue | 80–100% of total | Prioritize — prepare materials and apply |
+| Conditional Pursue | 70–79% of total | Validate blockers before committing time |
+| Hold | 60–69% of total | Only proceed if unique strategic value |
+| Decline | Below 60% of total | Not worth the energy — document and move on |
+
+For the default 5-category config (total = 50):
+- Strong Pursue: 40–50
+- Conditional Pursue: 35–39
+- Hold: 30–34
+- Decline: < 30
 
 ## Valid Statuses
 

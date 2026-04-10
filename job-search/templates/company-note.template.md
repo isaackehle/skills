@@ -25,7 +25,7 @@
 
 | Role | Job ID | Status | Score | Comp Range | Last Updated |
 |------|--------|--------|-------|------------|--------------|
-| [[job-descriptions/Role-Name-ID]] | JR###### | 🔍 Exploring | —/50 | $XXXk–$XXXk | YYYY-MM-DD |
+| [[job-descriptions/Role-Name-ID]] | JR###### | 🔍 Exploring | —/{total} | $XXXk–$XXXk | YYYY-MM-DD |
 
 ## Closed / Archived Positions
 
