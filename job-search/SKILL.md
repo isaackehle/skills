@@ -26,8 +26,7 @@ Expected layout:
 
 ```
 job_search/
-├── _system/
-│   └── job-matrix.md             # Single source of truth — the full pipeline tracker
+├── comparison-matrix.md             # Single source of truth — the full pipeline tracker
 ├── companies/
 │   └── [Company]/
 │       ├── [Company].md          # Company overview, links to all positions
@@ -63,7 +62,7 @@ Research and score one opportunity. Load `references/opportunity-evaluation.md`.
 
 ### `add to matrix`
 Add or update a company in the job matrix. Load `references/matrix-management.md`.
-- Create or update `_system/job-matrix.md`
+- Create or update `comparison-matrix.md`
 - Create company folder and main file if they don't exist (use `templates/company-note.template.md`)
 - Create position file in `companies/[Company]/job-descriptions/` (use `templates/opportunity-input.template.md`)
 - Never update the matrix without confirming status first — default is Exploring
@@ -95,7 +94,7 @@ Find new job postings matching the candidate profile. Load `references/niche-mar
 - Match against differentiators and comp floor from private profile
 
 ### `show matrix` / `pipeline status`
-Read and display the current `_system/job-matrix.md` in a clean summary format.
+Read and display the current `comparison-matrix.md` in a clean summary format.
 
 ### `archive [Company]`
 Move a company to archive status in the matrix. Set final status (Rejected, Withdrawn). Do not delete company files — move them to `archive/[Company]/`.

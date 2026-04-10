@@ -1,6 +1,6 @@
 # [Company Name] — [Role Title]
 
-**Company:** [[companies/[Company]/[Company]]]
+**Company:** [Company](companies/[Company]/[Company])
 **Job ID:** JR######
 **Status:** 🔍 Exploring
 **Score:** —/{total}
@@ -46,11 +46,11 @@
 
 *(Generate this table dynamically from the active scoring config. See `references/scoring-framework.md`.)*
 
-| Category | Score | Evidence |
-|----------|-------|----------|
-| {category.name} | /{category.max} | |
-| ... | | |
-| **TOTAL** | **/{total}** | |
+| Category        | Score           | Evidence |
+| --------------- | --------------- | -------- |
+| {category.name} | /{category.max} |          |
+| ...             |                 |          |
+| **TOTAL**       | **/{total}**    |          |
 
 **Recommendation:**
 
@@ -81,7 +81,7 @@
 ## Interview Process
 
 | Date | Stage | Interviewer(s) | Duration | Outcome |
-|------|-------|---------------|----------|---------|
+| ---- | ----- | -------------- | -------- | ------- |
 
 See `interviews/` for prep and debrief files.
 
@@ -89,4 +89,4 @@ See `interviews/` for prep and debrief files.
 
 ## Notes
 
-**Job Matrix:** [[../_system/job-matrix#[Company]]]
+**Comparison Matrix:** [[../_system/job-matrix#[Company]]]

@@ -1,4 +1,4 @@
-# Job Matrix Management
+# Comparison Matrix Management
 
 The job matrix is a single markdown table at:
 `JOB_SEARCH_WORKSPACE/_system/job-matrix.md`
@@ -8,31 +8,31 @@ This is the **only** tracker. There is no JSON counterpart.
 ## Matrix Schema
 
 ```markdown
-# Job Matrix
+# Comparison Matrix
 
 Last updated: YYYY-MM-DD
 
-| Company | Role | Level | Status | Score | Comp Range | Location | Source | Added | Notes |
-|---------|------|-------|--------|-------|------------|----------|--------|-------|-------|
-| [[companies/Acme/Acme]] | Staff SWE — Platform | Staff | 🔍 Exploring | 38/50 | $220k–$260k | Remote | LinkedIn | 2026-04-01 | AI platform team |
+| Company                 | Role                 | Level | Status      | Score | Comp Range  | Location | Source   | Added      | Notes            |
+| ----------------------- | -------------------- | ----- | ----------- | ----- | ----------- | -------- | -------- | ---------- | ---------------- |
+| [Acme](companies/Acme/Acme) | Staff SWE — Platform | Staff | 🔍 Exploring | 38/50 | $220k–$260k | Remote   | LinkedIn | 2026-04-01 | AI platform team |
 
 *(Score denominator reflects the active scoring config total. Default is /50.)*
 ```
 
 ## Status Values
 
-| Status | Icon | Meaning |
-|--------|------|---------|
-| Exploring | 🔍 | Initial research — no commitment |
-| Pursuing | 🚀 | Active target — preparing to apply |
-| Applied | 📨 | Application submitted |
-| Screening | 📞 | Recruiter or phone screen active |
-| Interviewing | 🎯 | In interview process |
-| Hold | ⏸️ | Blocked — waiting on a condition |
-| Future | 📅 | No active opening — monitor |
-| Offer | 🎁 | Offer received |
-| Rejected | ❌ | Application declined |
-| Withdrawn | ➡️ | Self-withdrawn |
+| Status       | Icon | Meaning                            |
+| ------------ | ---- | ---------------------------------- |
+| Exploring    | 🔍    | Initial research — no commitment   |
+| Pursuing     | 🚀    | Active target — preparing to apply |
+| Applied      | 📨    | Application submitted              |
+| Screening    | 📞    | Recruiter or phone screen active   |
+| Interviewing | 🎯    | In interview process               |
+| Hold         | ⏸️    | Blocked — waiting on a condition   |
+| Future       | 📅    | No active opening — monitor        |
+| Offer        | 🎁    | Offer received                     |
+| Rejected     | ❌    | Application declined               |
+| Withdrawn    | ➡️    | Self-withdrawn                     |
 
 Default on add: **Exploring**. Never write Pursuing without explicit user confirmation.
 

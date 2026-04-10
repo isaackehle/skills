@@ -23,22 +23,22 @@
 
 ## Active Positions
 
-| Role | Job ID | Status | Score | Comp Range | Last Updated |
-|------|--------|--------|-------|------------|--------------|
-| [[job-descriptions/Role-Name-ID]] | JR###### | 🔍 Exploring | —/{total} | $XXXk–$XXXk | YYYY-MM-DD |
+| Role                              | Job ID   | Status      | Score     | Comp Range  | Last Updated |
+| --------------------------------- | -------- | ----------- | --------- | ----------- | ------------ |
+| [[job-descriptions/Role-Name-ID]] | JR###### | 🔍 Exploring | —/{total} | $XXXk–$XXXk | YYYY-MM-DD   |
 
 ## Closed / Archived Positions
 
 | Role | Job ID | Final Status | Outcome |
-|------|--------|-------------|---------|
+| ---- | ------ | ------------ | ------- |
 
 ---
 
 ## People
 
-| Name | Role | Relationship | Last Contact |
-|------|------|-------------|-------------|
-| [[people/First-Last]] | Recruiter | Initial outreach | YYYY-MM-DD |
+| Name                  | Role      | Relationship     | Last Contact |
+| --------------------- | --------- | ---------------- | ------------ |
+| [[people/First-Last]] | Recruiter | Initial outreach | YYYY-MM-DD   |
 
 ---
 
@@ -68,10 +68,10 @@
 **Job board:** [Greenhouse](https://job-boards.greenhouse.io/company) | [Lever](https://jobs.lever.co/company) | [Ashby](https://jobs.ashbyhq.com/company)
 
 | Role | Level | Status | Notes |
-|------|-------|--------|-------|
+| ---- | ----- | ------ | ----- |
 
 ---
 
 ## Notes
 
-**Job Matrix:** [[../_system/job-matrix#[Company]]]
+**Comparison Matrix:** [[../_system/job-matrix#[Company]]]
