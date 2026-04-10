@@ -70,7 +70,7 @@ Add to the bottom of the live notes file, or create a separate `debrief-[Stage]-
 Send within 24 hours of each stage. Keep it brief.
 
 ```
-Subject: Thank you — Isaac Kehle — [Role at Company]
+Subject: Thank you — [Your Name] — [Role at Company]
 
 Hi [Name],
 
@@ -81,7 +81,7 @@ Thank you for the time today. I particularly appreciated [one specific thing fro
 Looking forward to [next steps].
 
 Best,
-Isaac Kehle
+[Your Name]
 ```
 
 Do not copy-paste a generic template verbatim — personalize the middle line to something real from the call.

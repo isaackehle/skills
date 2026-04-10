@@ -65,8 +65,8 @@
 
 ## Resume
 
-- **Tailored Resume:** [[../resumes/Isaac_Kehle-[identifier]]]
-- **Word Document:** `resumes/Isaac_Kehle-[identifier]-v1.docx`
+- **Tailored Resume:** [[../resumes/[CandidateName]-[identifier]]]
+- **Word Document:** `resumes/[CandidateName]-[identifier]-v1.docx`
 
 ---
 

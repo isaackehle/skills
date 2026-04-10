@@ -15,7 +15,7 @@ This skill is public. Personal values and working artifacts stay outside the rep
 
 The agent reads `candidate-profile.private.md` automatically if it exists. It applies your:
 - Comp floor and negotiation constraints
-- Schedule constraints (Shabbat, protected time, ADHD accommodation)
+- Schedule constraints and protected time blocks
 - Location and remote requirements
 - Burnout / energy context
 - Security clearance status

@@ -38,7 +38,7 @@ Flag any role where TTC cannot reasonably reach the comp floor from the private 
 - **5–7:** Unclear signals, some concerns worth probing in interviews
 - **1–4:** Toxic signals in Glassdoor or JD, poor WLB, pace language without support signals
 
-This category is weighted heavily for burnout recovery. Trust nervous system signals as data.
+If the candidate profile indicates burnout recovery, weight this category heavily. Nervous system signals are data, not noise.
 
 ### Strategic Fit (1–10)
 - **8–10:** Clear path to Principal or above, strong resume brand value, network worth building

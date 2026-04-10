@@ -4,10 +4,10 @@
 
 | Variable | Purpose | Recommended Path |
 |----------|---------|-----------------|
-| `JOB_SEARCH_WORKSPACE` | Working documents and generated artifacts | `~/Obsidian/Documents/primary/job_search/` |
-| `PRIVATE_CONFIG_ROOT` | Private configuration and personal constraints | `~/Obsidian/Documents/primary/private/` |
+| `JOB_SEARCH_WORKSPACE` | Working documents and generated artifacts | `<your-vault>/job_search/` |
+| `PRIVATE_CONFIG_ROOT` | Private configuration and personal constraints | `<your-vault>/private/` |
 
-Both roots travel with your Obsidian vault if you use iCloud Sync or Obsidian Sync.
+Replace `<your-vault>` with the path to your notes vault (e.g. an Obsidian vault). If your vault syncs via iCloud or Obsidian Sync, both roots travel automatically.
 
 ## Workspace Layout
 
@@ -52,11 +52,11 @@ private/
 
 ## Syncing Across Machines
 
-If your vault is iCloud or Obsidian Sync, it travels automatically. To symlink skills for Claude Code or OpenCode:
+If your vault syncs, skills travel automatically. To symlink skills for Claude Code or OpenCode:
 
 ```bash
-ln -sfn ~/Obsidian/Documents/primary/skills ~/.claude/skills
-ln -sfn ~/Obsidian/Documents/primary/skills ~/.config/opencode/skills
+ln -sfn <your-vault>/skills ~/.claude/skills
+ln -sfn <your-vault>/skills ~/.config/opencode/skills
 ```
 
 ## First-Time Setup

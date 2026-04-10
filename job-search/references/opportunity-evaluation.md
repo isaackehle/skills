@@ -8,8 +8,8 @@ Run these before investing in deep research. Any instant disqualifier → stop a
 
 **Instant disqualifiers:**
 - TTC ceiling clearly below comp floor (from private profile)
-- Role requires relocation (remote-only or commutable from Owings Mills, MD — ~1hr radius: Baltimore, Columbia, Frederick)
-- In-office schedule conflicts with Shabbat (Fri sundown–Sat sundown)
+- Role requires relocation beyond the candidate's commute radius (check private profile for location constraints)
+- In-office schedule conflicts with protected time blocks (check private profile for schedule constraints)
 - Obvious toxic signals in the JD itself
 
 **Quick checks:**

@@ -44,7 +44,7 @@ Default on add: **Exploring**. Never write Pursuing without explicit user confir
 
 ## Column Definitions
 
-- **Company**: Obsidian wiki-link to company overview file
+- **Company**: Link to company overview file (wiki-link if vault supports it)
 - **Role**: Role title — link to position file if it exists
 - **Level**: IC level (Staff, Principal, Senior, etc.)
 - **Status**: Icon + text from table above

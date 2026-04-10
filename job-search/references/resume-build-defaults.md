@@ -13,8 +13,10 @@ Apply every time a resume is produced. Do not deviate without explicit user inst
 ## Output
 
 Always produce both formats:
-- `Isaac_Kehle-[identifier].md` — reviewed in Obsidian first
-- `Isaac_Kehle-[identifier]-v1.docx` — generated after user approves the markdown
+- `[CandidateName]-[identifier].md` — reviewed in your vault first
+- `[CandidateName]-[identifier]-v1.docx` — generated after user approves the markdown
+
+`[CandidateName]` = your name in `First_Last` format (e.g. `Jane_Doe`). Set this once and reuse.
 
 Both saved to `companies/[Company]/resumes/`.
 
@@ -22,11 +24,11 @@ Do not create a global `resume/tailored/` folder. All tailored versions live und
 
 ## File Identifier (Priority Order)
 
-1. Job req number — strip `JR` prefix: `JR1978573` → `1978573` → `Isaac_Kehle-1978573`
+1. Job req number — strip `JR` prefix: `JR1978573` → `1978573` → `[CandidateName]-1978573`
 2. URL UUID — last 8 characters of the job posting URL
-3. Role title — compressed: `Isaac_Kehle-Principal-Firmware-Engineer`
+3. Role title — compressed: `[CandidateName]-Principal-Firmware-Engineer`
 
-Increment version suffix on substantive changes: `Isaac_Kehle-1978573-v2.md`
+Increment version suffix on substantive changes: `[CandidateName]-1978573-v2.md`
 
 ## DOCX Styling
 
@@ -48,15 +50,15 @@ Use `experience-inventory.md` as source. Keep structure: Career Highlights → P
 - Mirror keywords from the JD where truthful and natural
 
 **Step 3: Build the markdown version**
-- No footers, job URLs, Obsidian links, or framing notes in the file body
-- Format for clean Obsidian review
+- No footers, job URLs, wiki-links, or framing notes in the file body
+- Format for clean review in your vault
 - User reviews and approves before DOCX is generated
 
 **Step 4: Generate DOCX**
 Convert from markdown. Verify the output does not contain:
 - Footer notes like `*Tailored for: [Company]*`
 - Any markdown-only metadata or framing text
-- Obsidian wiki-links
+- Wiki-links or vault-specific syntax
 
 ## Formatting Rules
 

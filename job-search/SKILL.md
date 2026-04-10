@@ -16,9 +16,11 @@ End-to-end job search workflow. Each command below maps to a distinct task. Load
 All paths are relative to `JOB_SEARCH_WORKSPACE`:
 
 ```
-JOB_SEARCH_WORKSPACE = ~/Obsidian/Documents/primary/job_search/
-PRIVATE_CONFIG_ROOT  = ~/Obsidian/Documents/primary/private/
+JOB_SEARCH_WORKSPACE = <your-vault>/job_search/
+PRIVATE_CONFIG_ROOT  = <your-vault>/private/
 ```
+
+Set these to your actual paths. See `docs/workspace-setup.md` for details.
 
 Expected layout:
 
@@ -70,7 +72,7 @@ Add or update a company in the job matrix. Load `references/matrix-management.md
 Create a tailored resume for a specific role. Load `references/resume-build-defaults.md`.
 - Source: `resume/experience-inventory.md` + most relevant reference resume
 - Output: both `.md` and `.docx` to `companies/[Company]/resumes/`
-- Filename: `Isaac_Kehle-[identifier]` where identifier = job req number, URL uuid, or role title
+- Filename: `[CandidateName]-[identifier]` where identifier = job req number, URL uuid, or role title
 
 ### `prep for [Company] [stage]`
 Create an interview prep document. Load `references/interview-prep.md`.
