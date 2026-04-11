@@ -54,7 +54,7 @@ If private profile exists, apply it before scoring or making recommendations. Ne
 ## Commands
 
 ### `score this job`
-Research and score one opportunity. Load `references/opportunity-evaluation.md`.
+Research and score one opportunity. Load `references/job-scoring-rules.md`.
 - Phase 1: Quick screen (comp floor, Glassdoor, funding/stability)
 - Phase 2: Deep research (configurable scorecard — see `references/scoring-defaults.md`)
 - Phase 3: Score and decide
@@ -116,16 +116,16 @@ Load these on demand — only when the relevant command is invoked:
 
 | File | Load when |
 |------|-----------|
-| `references/opportunity-evaluation.md` | Scoring a job |
-| `references/matrix-management.md` | Adding/updating the job matrix |
-| `references/resume-build-defaults.md` | Tailoring a resume |
-| `references/interview-prep.md` | Preparing for an interview stage |
-| `references/interview-note-taker.md` | Live note-taking during an interview |
-| `references/interview-debrief.md` | Post-interview debrief |
-| `references/scoring-defaults.md` | Default scoring categories (overridable via private profile) |
-| `references/scoring-framework.md` | How to resolve config and apply decision bands |
-| `references/negotiation-rules.md` | Any comp or offer negotiation |
-| `references/gap-answers.md` | Scripted answers for tech stack gaps |
 | `references/ai-tooling-framing.md` | Framing AI tooling experience |
 | `references/coaching-guardrails.md` | Coaching style and behavior constraints |
+| `references/gap-answers.md` | Scripted answers for tech stack gaps |
+| `references/interview-debrief.md` | Post-interview debrief |
+| `references/interview-note-taker.md` | Live note-taking during an interview |
+| `references/interview-prep.md` | Preparing for an interview stage |
+| `references/job-scoring-rules.md` | Scoring a job |
+| `references/matrix-management.md` | Adding/updating the job matrix |
+| `references/negotiation-rules.md` | Any comp or offer negotiation |
+| `references/resume-build-defaults.md` | Tailoring a resume |
+| `references/scoring-defaults.md` | Default scoring categories (overridable via private profile) |
+| `references/scoring-framework.md` | How to resolve config and apply decision bands |
 | `references/tech-stack.md` | Full tech stack reference |

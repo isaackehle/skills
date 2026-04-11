@@ -12,8 +12,8 @@ This is the **only** tracker. There is no JSON counterpart.
 
 Last updated: YYYY-MM-DD
 
-| Company                 | Role                 | Level | Status      | Score | Comp Range  | Location | Source   | Added      | Notes            |
-| ----------------------- | -------------------- | ----- | ----------- | ----- | ----------- | -------- | -------- | ---------- | ---------------- |
+| Company                     | Role                 | Level | Status      | Score | Comp Range  | Location | Source   | Added      | Notes            |
+| --------------------------- | -------------------- | ----- | ----------- | ----- | ----------- | -------- | -------- | ---------- | ---------------- |
 | [Acme](companies/Acme/Acme) | Staff SWE — Platform | Staff | 🔍 Exploring | 38/50 | $220k–$260k | Remote   | LinkedIn | 2026-04-01 | AI platform team |
 
 *(Score denominator reflects the active scoring config total. Default is /50.)*

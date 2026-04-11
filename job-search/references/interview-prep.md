@@ -4,14 +4,14 @@ Prepare for one interview stage at a time. Output goes to `companies/[Company]/i
 
 ## What Each Stage Tests (General Guide)
 
-| Stage | Typically Tests |
-|-------|----------------|
-| Recruiter screen | Culture fit, comp alignment, logistics, timeline |
-| Hiring manager screen | Scope fit, level calibration, communication style, leadership |
-| Technical / coding | Specific skills, problem-solving approach, code quality |
-| System design | Architecture thinking, tradeoffs, scope at Staff/Principal level |
-| Behavioral / values | Past experience stories, judgment, conflict resolution |
-| Final / panel | Cross-functional fit, culture, decision-making |
+| Stage                 | Typically Tests                                                  |
+| --------------------- | ---------------------------------------------------------------- |
+| Recruiter screen      | Culture fit, comp alignment, logistics, timeline                 |
+| Hiring manager screen | Scope fit, level calibration, communication style, leadership    |
+| Technical / coding    | Specific skills, problem-solving approach, code quality          |
+| System design         | Architecture thinking, tradeoffs, scope at Staff/Principal level |
+| Behavioral / values   | Past experience stories, judgment, conflict resolution           |
+| Final / panel         | Cross-functional fit, culture, decision-making                   |
 
 ## Prep Document Structure
 
@@ -42,7 +42,7 @@ Prepare for one interview stage at a time. Output goes to `companies/[Company]/i
 
 ### Must-Ask (Non-Negotiable)
 | Question | Why I'm Asking | Green Answer | Red Flag Answer |
-|----------|---------------|--------------|-----------------|
+| -------- | -------------- | ------------ | --------------- |
 
 ### Should-Ask
 -

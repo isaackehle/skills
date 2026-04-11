@@ -132,12 +132,12 @@ scoring:
 
 Each category must define:
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `name` | Yes | Display name for the category |
-| `max` | Yes | Maximum score for this category (integer) |
-| `priority` | Yes | Sort order (1 = highest priority) |
-| `description` | Yes | What this category measures |
-| `bands` | Yes | Array of scoring bands, each with `range`, `label`, and `meaning` |
-| `key_questions` | No | Questions to answer when scoring this category |
-| `red_flag` | No | A condition that must be flagged regardless of score |
+| Field           | Required | Description                                                       |
+| --------------- | -------- | ----------------------------------------------------------------- |
+| `name`          | Yes      | Display name for the category                                     |
+| `max`           | Yes      | Maximum score for this category (integer)                         |
+| `priority`      | Yes      | Sort order (1 = highest priority)                                 |
+| `description`   | Yes      | What this category measures                                       |
+| `bands`         | Yes      | Array of scoring bands, each with `range`, `label`, and `meaning` |
+| `key_questions` | No       | Questions to answer when scoring this category                    |
+| `red_flag`      | No       | A condition that must be flagged regardless of score              |

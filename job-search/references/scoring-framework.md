@@ -27,9 +27,9 @@ Build the scorecard dynamically from whichever config is active:
 ```markdown
 ## Scoring: [Company] — [Role]
 
-| Category | Score | Evidence |
-|----------|-------|----------|
-| {category.name} | /{category.max} | |
+| Category        | Score           | Evidence |
+| --------------- | --------------- | -------- |
+| {category.name} | /{category.max} |          |
 ...
 | **TOTAL** | **/{total}** | |
 ```
@@ -44,12 +44,12 @@ For each category, in priority order:
 
 Decision bands scale with the total. Calculate thresholds as percentages of the total:
 
-| Tier | Range | Action |
-|------|-------|--------|
-| Strong Pursue | 80–100% of total | Prioritize — prepare materials and apply |
-| Conditional Pursue | 70–79% of total | Validate blockers before committing time |
-| Hold | 60–69% of total | Only proceed if unique strategic value |
-| Decline | Below 60% of total | Not worth the energy — document and move on |
+| Tier               | Range              | Action                                      |
+| ------------------ | ------------------ | ------------------------------------------- |
+| Strong Pursue      | 80–100% of total   | Prioritize — prepare materials and apply    |
+| Conditional Pursue | 70–79% of total    | Validate blockers before committing time    |
+| Hold               | 60–69% of total    | Only proceed if unique strategic value      |
+| Decline            | Below 60% of total | Not worth the energy — document and move on |
 
 For the default 5-category config (total = 50):
 - Strong Pursue: 40–50
@@ -59,17 +59,17 @@ For the default 5-category config (total = 50):
 
 ## Valid Statuses
 
-| Status | Icon | Meaning | Default action |
-|--------|------|---------|---------------|
-| Exploring | 🔍 | Initial research | Gather data, no commitment |
-| Pursuing | 🚀 | Active target | Prepare materials, apply |
-| Applied | 📨 | Application submitted | Track response |
-| Screening | 📞 | Recruiter/phone screen | Active communication |
-| Interviewing | 🎯 | In interview loop | Prep and debrief each stage |
-| Hold | ⏸️ | Blocked, monitoring | Wait for condition to change |
-| Future | 📅 | No active opening | Monitor for openings |
-| Offer | 🎁 | Offer received | Evaluate and negotiate |
-| Rejected | ❌ | Application declined | Archive |
-| Withdrawn | ➡️ | Self-withdrawn | Document reasoning |
+| Status       | Icon | Meaning                | Default action               |
+| ------------ | ---- | ---------------------- | ---------------------------- |
+| Exploring    | 🔍    | Initial research       | Gather data, no commitment   |
+| Pursuing     | 🚀    | Active target          | Prepare materials, apply     |
+| Applied      | 📨    | Application submitted  | Track response               |
+| Screening    | 📞    | Recruiter/phone screen | Active communication         |
+| Interviewing | 🎯    | In interview loop      | Prep and debrief each stage  |
+| Hold         | ⏸️    | Blocked, monitoring    | Wait for condition to change |
+| Future       | 📅    | No active opening      | Monitor for openings         |
+| Offer        | 🎁    | Offer received         | Evaluate and negotiate       |
+| Rejected     | ❌    | Application declined   | Archive                      |
+| Withdrawn    | ➡️    | Self-withdrawn         | Document reasoning           |
 
 **Default on add: Exploring.** Never write Pursuing without explicit user confirmation.
