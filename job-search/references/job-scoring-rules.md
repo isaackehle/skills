@@ -105,19 +105,18 @@ After each interview stage, return to the company file and:
 
 ### Company Job Description Files
 
-Each company's job description markdown file should include a breakdown of each scoring category with specific evidence from the job description:
+Each company's job description markdown file should include a breakdown of each scoring category with specific evidence from the job description. This is one example, however, depending on the set of scoring framework categories, the format may vary.
 
 ```markdown
 ## Scoring: [Company] — [Role]
 
-| Category           | Score   | Evidence                                                                                                                          |
-| ------------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Financial Fit      | /10     | The job description mentions "competitive compensation package with equity" which aligns with the "Strong" band for Financial Fit |
-| Technical Fit      | /10     | The job description lists experience with "Go, Python, and Rust" which matches the desired stack for Technical Fit                |
-| Nervous System Fit | /10     | The job description mentions "async-friendly culture" which supports the "Strong" band for Nervous System Fit                     |
-| Strategic Fit      | /10     | The job description mentions "opportunity to grow into senior roles" which supports the "Strong" band for Strategic Fit           |
-| Mission Fit        | /10     | The job description emphasizes "building tools that help developers" which aligns with the mission alignment                      |
-| **TOTAL**          | **/50** |                                                                                                                                   |
+| Category      | Score   | Evidence                                                                                                                          |
+| ------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Financial Fit | /10     | The job description mentions "competitive compensation package with equity" which aligns with the "Strong" band for Financial Fit |
+| Technical Fit | /10     | The job description lists experience with "Go, Python, and Rust" which matches the desired stack for Technical Fit                |
+| Strategic Fit | /10     | The job description mentions "opportunity to grow into senior roles" which supports the "Strong" band for Strategic Fit           |
+| Mission Fit   | /10     | The job description emphasizes "building tools that help developers" which aligns with the mission alignment                      |
+| **TOTAL**     | **/40** |                                                                                                                                   |
 
 **Recommendation:** Strong Pursue / Conditional Pursue / Hold / Decline
 
