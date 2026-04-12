@@ -4,7 +4,7 @@ description: "Semantic versioning skill that follows semver.org specifications. 
 license: MIT
 metadata:
   author: ikehle
-  version: '1.0'
+  version: '1.0.1'
 ---
 
 # Semantic Versioning
@@ -84,7 +84,7 @@ Each skill should maintain its own semantic version in its SKILL.md file:
 ```yaml
 metadata:
   author: ikehle
-  version: '1.0'
+  version: '1.0.1'
 ```
 
 ### For Repository-Level Versioning

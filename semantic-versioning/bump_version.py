@@ -3,12 +3,23 @@
 import re
 import sys
 
+
+def read_file(filepath):
+    with open(filepath, "r", encoding="utf-8") as f:
+        return {"content": f.read()}
+
+
+def edit_existing_file(filepath, changes):
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(changes)
+    return {"message": "File updated"}
+
 def ask_question(question):
-    return input(f"{question}\n")
+    return input(f"{question}\n").strip()
 
 def bump_version(file_path, new_version):
     content = read_file(filepath=file_path)["content"]
-    version_pattern = r"version: '\d+\.\d+\.\d+'"
+    version_pattern = r"version:\s*'\d+\.\d+(?:\.\d+)?'"
     new_content = re.sub(version_pattern, f"version: '{new_version}'", content)
     edit_existing_file(
         filepath=file_path,
@@ -17,7 +28,17 @@ def bump_version(file_path, new_version):
 
 def main():
     file_path = ask_question("Enter the path of the SKILL.md file:")
-    current_version = read_file(filepath=file_path)["content"].split("version: '")[-1].split("'")[0]
+    content = read_file(filepath=file_path)["content"]
+    version_match = re.search(r"version:\s*'(\d+\.\d+(?:\.\d+)?)'", content)
+    if not version_match:
+        print("Could not find a version like 'x.y' or 'x.y.z' in the target file. Exiting.")
+        sys.exit(1)
+
+    parsed_version = version_match.group(1)
+    parts = parsed_version.split('.')
+    if len(parts) == 2:
+        parts.append('0')
+    current_version = '.'.join(parts)
     print(f"Current version: {current_version}")
 
     version_type = ask_question(
@@ -33,7 +54,7 @@ def main():
     elif version_type == "2":
         new_version = f"{current_version.split('.')[0]}.{int(current_version.split('.')[1]) + 1}.0"
     elif version_type == "3":
-        new_version = current_version
+        new_version = f"{current_version.split('.')[0]}.{current_version.split('.')[1]}.{int(current_version.split('.')[2]) + 1}"
     else:
         print("Invalid choice. Exiting.")
         sys.exit(1)
