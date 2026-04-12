@@ -1,3 +1,7 @@
 {
-    "continue.enableConsole": true
+    "continue.enableConsole": true,
+    "cSpell.words": [
+        "Ashby",
+        "ikehle"
+    ]
 }

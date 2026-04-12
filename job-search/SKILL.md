@@ -4,10 +4,10 @@ description: "End-to-end job search skill for Claude Code and OpenCode. Covers o
 license: MIT
 metadata:
   author: ikehle
-  version: '2.0'
+  version: '2.1'
 ---
 
-# Job Search
+# Job Searches
 
 End-to-end job search workflow. Each command below maps to a distinct task. Load reference files as needed — do not load all of them upfront.
 
@@ -55,7 +55,7 @@ If private profile exists, apply it before scoring or making recommendations. Ne
 
 ### `score this job`
 Research and score one opportunity. Load `references/job-scoring-rules.md`.
-- Phase 1: Quick screen (comp floor, Glassdoor, funding/stability)
+- Phase 1: Quick screen (comp floor, GlassDoor, funding/stability)
 - Phase 2: Deep research (configurable scorecard — see `references/scoring-defaults.md`)
 - Phase 3: Score and decide
 - Output: Formatted scorecard ready to paste into the position file
@@ -105,7 +105,7 @@ Move a company to archive status in the matrix. Set final status (Rejected, With
 - Never let Financial Fit slide below comp floor without flagging it.
 - Never state the comp floor first in any negotiation context.
 - Never skip versioning on file outputs (resume files must be versioned).
-- Always check Glassdoor before scoring a company.
+- Always check GlassDoor before scoring a company.
 - Confirm before any irreversible action (status changes, file moves, matrix updates).
 - Prefer action items over open-ended summaries.
 - Surface missing context explicitly rather than guessing.
@@ -129,3 +129,8 @@ Load these on demand — only when the relevant command is invoked:
 | `references/scoring-defaults.md` | Default scoring categories (overridable via private profile) |
 | `references/scoring-framework.md` | How to resolve config and apply decision bands |
 | `references/tech-stack.md` | Full tech stack reference |
+
+
+## Deprecated Skills
+
+- 'opportunity-evaluation' — replaced by 'job-scoring-rules' for clarity and actionability

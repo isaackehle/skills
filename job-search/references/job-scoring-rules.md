@@ -164,3 +164,8 @@ The company files should contain all the detailed breakdowns of each job posting
 - **Archived Positions:** `❌ Rejected`, `➡️ Withdrawn`, `🎁 Offer`
 
 Do not hardcode category names in the output — always read them from the resolved config.
+
+
+## Deprecations
+
+- This skill was previously named `opportunity-evaluation`.
