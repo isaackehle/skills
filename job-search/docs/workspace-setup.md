@@ -13,8 +13,8 @@ Replace `<your-vault>` with the path to your notes vault (e.g. an Obsidian vault
 
 ```
 job_search/
-├── _system/
-│   └── job-matrix.md             # The only tracker — single markdown table
+├── comparison-matrix.md             # The only tracker — single markdown table
+├── incoming.md                      # Staging area for job links to process
 ├── companies/
 │   └── [Company]/
 │       ├── [Company].md          # Overview — links to all positions and people
@@ -61,7 +61,7 @@ ln -sfn <your-vault>/skills ~/.config/opencode/skills
 
 ## First-Time Setup
 
-1. Create `job_search/_system/job-matrix.md` — copy from `examples/job-matrix.example.md`
+1. Create `job_search/comparison-matrix.md` — copy from `examples/job-matrix.example.md`
 2. Copy `candidate-profile.template.md` to `private/job-search/candidate-profile.private.md` and fill it in
 3. Add your `experience-inventory.md` to `resume/`
 4. Start adding companies with `add to matrix`

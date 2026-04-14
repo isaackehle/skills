@@ -73,3 +73,9 @@ For the default 5-category config (total = 50):
 | Withdrawn    | ➡️    | Self-withdrawn         | Document reasoning           |
 
 **Default on add: Exploring.** Never write Pursuing without explicit user confirmation.
+
+| Section   | Status Icons |
+| --------- | ------------ |
+| Active    | 📨 Applied, 📞 Screening, 🎯 Interviewing, 🎁 Offer |
+| Potential | 🔍 Exploring, 🚀 Pursuing, ⏸️ Hold, 📅 Future |
+| Archived  | ❌ Rejected, ➡️ Withdrawn, ⏱️ Lapsed |

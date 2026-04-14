@@ -17,22 +17,23 @@ scoring:
       max: 10
       priority: 1
       description: >
-        Base + TTC vs comp floor, equity value, company stability.
+        Base salary vs $200K minimum, TTC vs $225K floor, equity value, company stability.
       bands:
         - range: 8-10
           label: Strong
-          meaning: Clearly exceeds comp floor, meaningful equity, stable company.
+          meaning: Base ≥ $200K AND TTC ≥ $225K, meaningful equity, stable company.
         - range: 5-7
           label: Adequate
-          meaning: Meets floor, questions about equity or long-term stability.
+          meaning: Meets one floor (base ≥ $200K OR TTC ≥ $225K), questions about the other.
         - range: 1-4
           label: Weak
-          meaning: Below floor, or major concerns about company ability to pay.
+          meaning: Below both floors (base < $200K AND TTC < $225K), or major concerns about company ability to pay.
       key_questions:
-        - Is the realistic TTC above the comp floor?
+        - Is the base salary at least $200K?
+        - Is the realistic TTC above $225K?
         - Is the company stable enough to pay it?
         - Is equity actually worth something, or speculative?
-      red_flag: Flag any role where TTC cannot reasonably reach the comp floor.
+      red_flag: Flag any role where TTC cannot reasonably reach the comp floor, or where base salary is below $200K.
 
     - name: Technical Fit
       max: 10

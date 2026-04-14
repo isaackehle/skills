@@ -6,8 +6,9 @@ Apply every time a resume is produced. Do not deviate without explicit user inst
 
 1. `resume/experience-inventory.md` — master source of truth, all roles and accomplishments
 2. Select the most relevant reference resume for the target role:
-   - `resume/reference-resume-ai-workflows.md` — AI/platform/full-stack roles
-   - `resume/reference-resume-embedded.md` — embedded systems/firmware roles
+   - `resume/reference/fullstack/Isaac_Kehle-Resume.md` — AI/platform/full-stack roles
+   - `resume/reference/general/Isaac_Kehle-Resume.md` — general roles (full-stack + embedded breadth)
+   - `resume/reference/embedded/Isaac_Kehle-Resume.md` — embedded systems/edge AI roles
 3. Tailor against the specific job description
 
 ## Output
@@ -67,6 +68,8 @@ Convert from markdown. Verify the output does not contain:
 - No single word trailing alone onto its own line in a competency row
 - No single job role spanning two pages
 - En dashes in patent numbers are acceptable
+- **Security clearance goes at the end of the Professional Summary, never as a separate section.** Format: append "TS/SCI Active, March 2026." to the summary paragraph.
+- **Patent entries: title and number only.** No inventor line, no URL, no "formerly known as" — just `U.S. Patent No. 7,768,548 — Mobile Digital Video Recording System`
 
 ## ATS Rules
 

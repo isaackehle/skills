@@ -25,7 +25,7 @@
 
 | Role                              | Job ID   | Status      | Score     | Comp Range  | Last Updated |
 | --------------------------------- | -------- | ----------- | --------- | ----------- | ------------ |
-| [[job-descriptions/Role-Name-ID]] | JR###### | 🔍 Exploring | —/{total} | $XXXk–$XXXk | YYYY-MM-DD   |
+| [Role-Name-ID](<job-descriptions/Role-Name-ID.md>) | JR###### | 🔍 Exploring | —/{total} | $XXXk–$XXXk | YYYY-MM-DD   |
 
 ## Closed / Archived Positions
 
@@ -38,7 +38,7 @@
 
 | Name                  | Role      | Relationship     | Last Contact |
 | --------------------- | --------- | ---------------- | ------------ |
-| [[people/First-Last]] | Recruiter | Initial outreach | YYYY-MM-DD   |
+| [First-Last](<people/First-Last.md>) | Recruiter | Initial outreach | YYYY-MM-DD   |
 
 ---
 
@@ -74,4 +74,4 @@
 
 ## Notes
 
-**Comparison Matrix:** [[../_system/job-matrix#[Company]]]
+**Comparison Matrix:** [comparison-matrix](<../../comparison-matrix.md#[Company]>)

@@ -1,6 +1,6 @@
 # [Company Name] — [Role Title]
 
-**Company:** [Company](companies/[Company]/[Company])
+**Company:** [Company](<companies/[Company]/[Company].md>)
 **Job ID:** JR######
 **Status:** 🔍 Exploring
 **Score:** —/{total}
@@ -64,7 +64,7 @@
 
 ## Resume
 
-- **Tailored Resume:** [[../resumes/[CandidateName]-[identifier]]]
+- **Tailored Resume:** [CandidateName]-[identifier](<../resumes/CandidateName-identifier.md>)
 - **Word Document:** `resumes/[CandidateName]-[identifier]-v1.docx`
 
 ---
@@ -89,4 +89,4 @@ See `interviews/` for prep and debrief files.
 
 ## Notes
 
-**Comparison Matrix:** [[../_system/job-matrix#[Company]]]
+**Comparison Matrix:** [comparison-matrix](<comparison-matrix.md#[Company]>)

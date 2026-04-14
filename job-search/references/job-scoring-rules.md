@@ -2,12 +2,22 @@
 
 Research a company thoroughly, then score it using the configured scoring categories. One workflow, one decision.
 
+## Data Fetch Permission
+
+When scoring a job, assume permission to fetch public data (job boards, company websites, Glassdoor, levels.fyi, LinkedIn public pages, Crunchbase, news articles). However, **flag before fetching** if the source is:
+- A paywalled or authenticated site (e.g., LinkedIn premium content, Glassdoor detailed reviews requiring login)
+- A site that might expose personal data or require credentials
+- Anything the user might consider unusual or sensitive
+
+For routine public sources (job posting pages, company about pages, levels.fyi, Crunchbase), proceed without asking.
+
 ## Phase 1: Quick Screen (Go / No-Go)
 
 Run these before investing in deep research. Any instant disqualifier → stop and document why.
 
 **Instant disqualifiers:**
-- TTC ceiling clearly below comp floor (from private profile)
+- Base salary below $200K (hard floor from private profile)
+- TTC ceiling clearly below $225K comp floor (from private profile)
 - Role requires relocation beyond the candidate's commute radius (check private profile for location constraints)
 - In-office schedule conflicts with protected time blocks (check private profile for schedule constraints)
 - Obvious toxic signals in the JD itself
@@ -135,14 +145,14 @@ Each company's job description markdown file should include a breakdown of each 
 Each job description in the matrix should have a row in the company's main file that shows the scoring breakdown. The comparison matrix itself should include three separate tables organized by status:
 
 #### Active Positions Table
-This table includes all positions that are actively being pursued or considered:
+This table includes all positions where you are in the active hiring process:
 
 | Company                     | Role                    | Level | Status     | Score | Comp Range  | Location | Source   | Added      | Notes                               |
 | --------------------------- | ----------------------- | ----- | ---------- | ----- | ----------- | -------- | -------- | ---------- | ----------------------------------- |
-| [Acme](companies/Acme/Acme) | Staff SWE — AI Platform | Staff | 🚀 Pursuing | 41/50 | $240k–$280k | Remote   | LinkedIn | 2026-03-15 | Strong technical fit, async culture |
+| [Acme](<companies/Acme/Acme.md>) | Staff SWE — AI Platform | Staff | 📨 Applied | 41/50 | $240k–$280k | Remote   | LinkedIn | 2026-03-15 | Strong technical fit, async culture |
 
 #### Potential Positions Table
-This table includes all positions that are being explored but not yet actively pursued:
+This table includes all positions under evaluation or pending action:
 
 | Company                                  | Role                      | Level     | Status      | Score | Comp Range  | Location | Source     | Added      | Notes                                     |
 | ---------------------------------------- | ------------------------- | --------- | ----------- | ----- | ----------- | -------- | ---------- | ---------- | ----------------------------------------- |
@@ -158,9 +168,9 @@ This table includes all positions that are no longer being considered:
 The company files should contain all the detailed breakdowns of each job posting with their respective scoring tables, and the matrix will show a summary view for each position.
 
 **Status Definitions:**
-- **Active Positions:** `🚀 Pursuing`, `📞 Screening`, `🎯 Interviewing`
-- **Potential Positions:** `🔍 Exploring`, `📅 Future`
-- **Archived Positions:** `❌ Rejected`, `➡️ Withdrawn`, `🎁 Offer`
+- **Active Positions:** `📨 Applied`, `📞 Screening`, `🎯 Interviewing`, `🎁 Offer`
+- **Potential Positions:** `🔍 Exploring`, `🚀 Pursuing`, `⏸️ Hold`, `📅 Future`
+- **Archived Positions:** `❌ Rejected`, `➡️ Withdrawn`, `⏱️ Lapsed`
 
 Do not hardcode category names in the output — always read them from the resolved config.
 
