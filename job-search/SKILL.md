@@ -4,7 +4,7 @@ description: "End-to-end job search skill for Claude Code and OpenCode. Covers o
 license: MIT
 metadata:
   author: ikehle
-  version: '3.0'
+  version: '3.1.0'
 ---
 
 # Job Searches
