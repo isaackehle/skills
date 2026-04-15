@@ -110,6 +110,14 @@ Find new job postings matching the candidate profile. Load `references/niche-mar
 - Search job boards directly (LinkedIn, Greenhouse, Lever, Ashby)
 - Match against differentiators and comp floor from private profile
 
+### `queue [url]`
+Append a job link to `job_search/incoming.md` for later batch processing. Does **not** score or research the link now.
+- Append the URL on a new line to `incoming.md`, along with a comment line with the date queued
+- Format: `<!-- queued YYYY-MM-DD -->\n<url>`
+- If `incoming.md` starts with a "processed" notice (e.g., `Processed on YYYY-MM-DD`), replace that notice with the new entries
+- If the URL already appears in the file (not inside a comment), skip it and tell the user it's already queued
+- Confirm to the user that the link was queued and remind them to run `process incoming` when ready
+
 ### `process incoming`
 Batch-process all job links in `job_search/incoming.md`. For each link:
 - Fetch the JD and score it using the standard scoring workflow
@@ -148,6 +156,23 @@ Emergency command to recreate `comparison-matrix.sqlite` from scratch. Load `ref
 ### `archive [Company]`
 Move all roles for a company to Archived status in the matrix. Set final status (Rejected, Withdrawn, Lapsed). Move company files to `archive/[Company]/` only if no active positions remain.
 
+### `delete [Company] [role]` / `delete [id]`
+Remove a role from the comparison matrix and clean up associated files.
+1. **Delete from `comparison-matrix.sqlite`** — use `DELETE FROM positions WHERE id = ?` (by row ID) or `WHERE company_slug = ? AND role_title = ?` (by company + title). If the user provides a job ID (e.g., `f9a8d518`, `b1748497`), match against `jd_filename` or `source_url` to find the row.
+2. **Delete the JD file** from `companies/[Company]/job-descriptions/` if it exists.
+3. **Update the company overview file** (`companies/[Company]/[Company].md`):
+   - Move the role from Active to Closed/Removed in the Positions table
+   - Remove from any Open Engineering Roles or similar tables
+   - Update `Last Updated` date
+   - If no active positions remain, suggest running `archive [Company]`
+4. **Regenerate `comparison-matrix.md`** by running `generate_matrix_md.sh`
+5. **Confirm** what was deleted — report the role title, company, JD file, and matrix row
+
+**Hard rules:**
+- Always confirm before deleting — show the user what will be removed
+- If the role is the only one for a company, warn the user that the company will have no remaining positions
+- Never delete a company folder or company overview file — only JD files for the specific role
+
 ## Hard Rules
 
 - All internal vault links must use **CommonMark** `[text](<path>)` syntax — not Obsidian `[[wikilink]]` syntax. The vault uses the **Better Markdown Links** plugin, which resolves CommonMark links with spaces and Unicode in paths. Per [CommonMark spec](https://commonmark.org/), wrap link destinations containing spaces in angle brackets: `[Acme](<Acme/Acme.md>)`, not `[[Acme/Acme]]`.
@@ -161,10 +186,14 @@ Move all roles for a company to Archived status in the matrix. Set final status 
 - Confirm before any irreversible action (status changes, file moves, matrix updates).
 - Prefer action items over open-ended summaries.
 - Surface missing context explicitly rather than guessing.
+- **Unscored roles must include a reason.** When a role has no score, always explain why in the `notes` field prefixed with `⏳` (e.g., `⏳ JD behind auth wall; comp TBD`). Never leave a score gap without a ⏳ reason. Use the correct score value depending on status:
+  - **Rejected or Withdrawn:** Score is `N/A` — these roles were never scored because the process ended before scoring. Set `score = -1` (the generate script renders -1 as N/A). The ⏳ reason should say "Rejected before scoring" or "Withdrawn before scoring".
+  - **All other statuses:** Score is `TBD` — these roles haven't been scored yet but may be in the future. The ⏳ reason should explain what's blocking the score (e.g., "⏳ Comp range not confirmed", "⏳ Awaiting recruiter response", "⏳ JD behind auth wall").
 - Each matrix row = one job description, not one company. Companies with multiple roles get multiple rows.
 - Split Score and Max into separate columns (e.g., 39 | 50, not 39/50).
 - Link both the company file and the JD file in each row.
 - Priority is computed from status + score — never set manually.
+- Source URLs in the matrix are rendered as markdown links using just the domain as display text: `[lever.co](<full-url>)`, `[ashbyhq.com](<full-url>)`, `[greenhouse.io](<full-url>)`, etc. Store the full URL in `source_url`; use `source` for the short domain/platform name. The `generate_matrix_md.sh` script combines them automatically.
 - The `updated_at` column tracks the last review/interaction — `review pipeline` updates it on Keep decisions to reset the age clock. Never update `added_date` for this purpose.
 
 ## Reference Files
