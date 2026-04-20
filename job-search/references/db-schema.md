@@ -144,6 +144,21 @@ ORDER BY section_order, priority_order,
     v.company_name, v.role_title;
 ```
 
+
+## Age Indicators
+
+Computed at generation time from `MAX(added_date, DATE(updated_at))`. The clock resets whenever `updated_at` is bumped (e.g. after a rescore or status update).
+
+| Age | Indicator | Criteria |
+|-----|-----------|----------|
+| Fresh | 🟢 | Most recent activity within 7 days |
+| Aging | 🟡 | Most recent activity 7–14 days ago |
+| Stale | 🟠 | Most recent activity 14–28 days ago |
+| Cold | 🔴 | Most recent activity 28+ days ago |
+| Unknown | (none) | Missing or invalid date |
+
+The `age_prefix` column in `v_positions` prepends this indicator to the `notes` field in the generated markdown. When writing or updating a row, always bump `updated_at` so the age clock resets correctly.
+
 ## Seed Data
 
 ```sql
