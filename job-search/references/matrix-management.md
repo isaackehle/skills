@@ -60,7 +60,7 @@ When regenerating a company file, **only replace the positions tables** — pres
 
 | Column | Source | Notes |
 |--------|--------|-------|
-| Company | `company_name` + `company_slug` → CommonMark link | `[Name](<slug.md>)` |
+| Company | `company_name` → CommonMark link to company file | `[Name](<Company.md>)` — filename only, no path prefix |
 | Role | `role_title` + `jd_filename` → CommonMark link | `[Title](<jd_filename>)` |
 | Level | `level` column | Free-text: Staff, Principal, Senior, etc. |
 | Priority | **Computed** from status + score | P1/P2/P3 — never manually set |
