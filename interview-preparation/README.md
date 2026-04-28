@@ -9,6 +9,7 @@ This skill ensures thorough preparation, systematic observation during interview
 ## Components
 
 ### Pre-Interview
+
 - Company research summary
 - Prepared talking points
 - Must/should/nice-to-ask questions
@@ -16,11 +17,13 @@ This skill ensures thorough preparation, systematic observation during interview
 - Red/green flags checklists
 
 ### During Interview
+
 - Observe red flags (vague answers, defensiveness, pressure)
 - Notice green flags (specificity, honesty, collaboration)
 - Check body signals (energy, anxiety, shutdown)
 
 ### Post-Interview
+
 - Structured debrief template
 - Energy check assessment
 - Decision framework (Advance/Pause/Withdraw)
@@ -29,24 +32,29 @@ This skill ensures thorough preparation, systematic observation during interview
 ## Red Flags Framework
 
 **In answers:**
+
 - Vague responses, deflection, defensiveness
 - Overpromising, "we need you to fix this"
 
 **In behavior:**
+
 - Late, distracted, unprepared
 - Pressuring for quick decision
 
 **In process:**
+
 - Unclear next steps, disorganized
 - Changing requirements
 
 ## Green Flags Framework
 
 **In answers:**
+
 - Specific examples, acknowledges challenges
 - Clear expectations, self-awareness
 
 **In behavior:**
+
 - Respectful, engaged, prepared
 - Collaborative (not interrogation)
 
@@ -61,6 +69,7 @@ This skill ensures thorough preparation, systematic observation during interview
 **Invoke:** `/interview-preparation`
 
 **Common commands:**
+
 - "Prep me for [Company] [Stage]" - Full prep document
 - "Debrief this interview" - Structured post-interview
 - "Draft thank you email" - Follow-up message
@@ -75,4 +84,4 @@ This skill ensures thorough preparation, systematic observation during interview
 
 ## Source
 
-Derived from Isaac's Career/templates/interview-debrief.md methodology.
+Derived from {templates_folder}/interview-debrief.md methodology.
