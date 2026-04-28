@@ -7,18 +7,20 @@ Skills I have developed and hope others might find useful.
 This repository is a shared library of installable skills.
 
 Each top-level skill is intended to be usable as its own grouped skill folder, typically with:
+
 - `SKILL.md`
-- `templates/`
+- `{templates_folder}`
+- `{references_folder}`
 - `examples/`
 - `docs/`
-- `references/`
 - `scripts/`
 
 ## Current skills
 
-### `job-search/`
+### `job-search`
 
 An end-to-end job-search workflow skill covering:
+
 - opportunity evaluation
 - resume tailoring
 - recruiter and interview prep
@@ -27,11 +29,11 @@ An end-to-end job-search workflow skill covering:
 - private personalization support
 
 Key files:
+
 - `job-search/SKILL.md`
-- `job-search/templates/`
+- `{templates_folder}`
+- `{references_folder}`
 - `job-search/examples/`
-- `job-search/docs/personalization.md`
-- `job-search/references/`
 - `job-search/scripts/`
 
 ## Public vs private
@@ -39,6 +41,7 @@ Key files:
 This repository contains reusable skill logic and non-sensitive examples.
 
 Keep personal values outside the repo, such as:
+
 - compensation floor
 - exact location constraints
 - accommodation needs
@@ -74,7 +77,6 @@ job-search/
 │   ├── live-notes.template.md
 │   └── recruiter-screen.template.md
 ```
-
 
 | File                          | Purpose                                                                                       |
 | ----------------------------- | --------------------------------------------------------------------------------------------- |

@@ -24,6 +24,7 @@ skill-name/
 ## Editing guidance
 
 When updating a skill:
+
 - keep public files generic and reusable
 - keep private user-specific settings out of the repository
 - provide templates for required inputs
@@ -33,11 +34,13 @@ When updating a skill:
 ## Runtime guidance
 
 This repository is a source library. The usual workflow is:
+
 1. pick a top-level skill folder
 2. copy or symlink it into your runtime skill directory
 3. keep your private personalization in local files outside the repo
 
 Example runtime locations:
+
 - `~/.claude/skills/`
 - `~/.config/opencode/skills/`
 - `~/.agents/skills/`
