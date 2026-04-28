@@ -4,7 +4,7 @@ description: "Analyze job descriptions for technology gaps, design targeted lear
 license: MIT
 metadata:
   author: ikehle
-  version: '1.0'
+  version: "1.0"
 ---
 
 # Tech Skill Development
@@ -13,13 +13,10 @@ Identify technology gaps from job descriptions, design learning projects, and tr
 
 ## Workspace
 
-All paths are relative to `TECH_LEARNING_WORKSPACE`:
-
-```
-TECH_LEARNING_WORKSPACE = <your-vault>/tech learning/
-JOB_SEARCH_WORKSPACE   = <your-vault>/job_search/
-PRIVATE_CONFIG_ROOT    = <your-vault>/private/
-```
+| Preference           | Default Value                   | Internal Alias         |
+| :------------------- | :------------------------------ | :--------------------- |
+| Workspace root       | ``                              |                        |
+| Customization Folder | `{JOB_SEARCH_WORKSPACE}/custom` | `customization_folder` |
 
 Set these to your actual paths.
 
@@ -38,10 +35,10 @@ Cross-reference with job search:
 ```
 job_search/
 └── companies/[Company]/
-    └── job-descriptions/[Role].md   # Source JDs for gap analysis
+    └── roles/[Role].md   # Source JDs for gap analysis
 ```
 
-If private profile exists at `PRIVATE_CONFIG_ROOT/job-search/candidate-profile.private.md`, apply it to understand the candidate's current skill set before performing gap analysis.
+If a custom profile exists at `{customization_folder}/candidate-profile.custom.md`, apply it to understand the candidate's current skill set before performing gap analysis.
 
 ## Commands
 
@@ -49,9 +46,9 @@ If private profile exists at `PRIVATE_CONFIG_ROOT/job-search/candidate-profile.p
 
 Extract technologies from a JD and identify skill gaps against the candidate's current profile.
 
-1. **Fetch the JD** from URL or read from `job_search/companies/[Company]/job-descriptions/`
+1. **Fetch the JD** from URL or read from `{companies_folder}/[Company]/roles/`
 2. **Extract technologies** — categorize into: Languages, Frameworks, Infrastructure, AI/ML, Security, Domain Knowledge
-3. **Map to current skills** — using `candidate-profile.private.md` + `references/tech-stack.md` (from job-search skill) + any explicitly stated skills
+3. **Map to current skills** — using `candidate-profile.custom.md` + `{references_folder}/tech-stack.md` (from job-search skill) + any explicitly stated skills
 4. **Rate gap severity** per technology:
    - 🔴 Critical — Required, no production experience
    - 🟠 Significant — Required, partial/related experience only
@@ -116,7 +113,7 @@ Mark a learning project as complete and update progress.
 - Every project plan must include **interview talking points** — the whole point is discussability.
 - Gap severity ratings must be **honest**, not optimistic. A technology you've read about but never used is 🟡 at best.
 - Distinguish **production experience** from **learning projects** in interview talking points. Never misrepresent a learning project as production work.
-- Cross-reference the job-search skill's `references/tech-stack.md` and `references/gap-answers.md` when available — don't duplicate that knowledge.
+- Cross-reference the job-search skill's `{references_folder}/tech-stack.md` and `{references_folder}/gap-answers.md` when available — don't duplicate that knowledge.
 - Prefer **composable projects** — later projects should build on earlier ones when possible (e.g., RAG → agents → observability).
 - Include **quick wins** for 🟡 Moderate gaps (articles, docs, short exercises) — not everything needs a full project.
 
@@ -124,13 +121,13 @@ Mark a learning project as complete and update progress.
 
 Load these on demand — only when the relevant command is invoked:
 
-| File | Load when |
-|------|-----------|
-| `references/ai-patterns-catalog.md` | Designing AI/ML learning projects |
-| `references/project-templates.md` | Scaffolding a new learning project plan |
-| Job-search `references/tech-stack.md` | Mapping candidate's current tech stack |
-| Job-search `references/gap-answers.md` | Scripted answers for known tech gaps |
-| Job-search `references/ai-tooling-framing.md` | Framing AI tooling experience accurately |
+| File                                                   | Load when                                |
+| ------------------------------------------------------ | ---------------------------------------- |
+| `{references_folder}/ai-patterns-catalog.md`           | Designing AI/ML learning projects        |
+| `{references_folder}/project-templates.md`             | Scaffolding a new learning project plan  |
+| Job-search `{references_folder}/tech-stack.md`         | Mapping candidate's current tech stack   |
+| Job-search `{references_folder}/gap-answers.md`        | Scripted answers for known tech gaps     |
+| Job-search `{references_folder}/ai-tooling-framing.md` | Framing AI tooling experience accurately |
 
 ## Integration with Job Search
 
