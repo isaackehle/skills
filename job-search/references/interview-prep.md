@@ -54,7 +54,7 @@ Prepare for one interview stage at a time. Output goes to `companies/[Company]/i
 -
 
 ## Gap Answers Ready
-See `references/gap-answers.md` — review before the call.
+See `{references_folder}/gap-answers.md` — review before the call.
 
 ## Scripted Openings
 - "Tell me about yourself": [60–90 second script]
@@ -68,26 +68,31 @@ See `references/gap-answers.md` — review before the call.
 These protect against repeating a toxic environment. Always include at least two:
 
 **Pace and pressure:**
+
 - "How would you describe the pace of work here?"
 - "How do you handle Friday-afternoon deadlines?"
 - "What does a typical week look like for someone in this role?"
 
 **Management quality:**
+
 - "How do you handle it when someone on the team is struggling?"
 - "What's your approach to giving feedback?"
 - "How long has your team been together?"
 
 **Flexibility and autonomy:**
+
 - "How does the team handle async communication and different working styles?"
 - "How much ownership does someone at this level have over technical decisions?"
 
 **Technical culture:**
+
 - "How do you handle technical debt?"
 - "Can you walk me through a recent architectural decision — who was involved and how it was made?"
 
 ## Red Flags to Watch During the Interview
 
 **In their answers:**
+
 - Vague or deflecting responses to direct questions
 - Defensive about Glassdoor reviews or company challenges
 - Overpromising (role will have huge impact / tons of autonomy) without specifics
@@ -95,12 +100,14 @@ These protect against repeating a toxic environment. Always include at least two
 - Can't describe a recent technical decision clearly
 
 **In their behavior:**
+
 - Late without acknowledgment
 - Distracted or multitasking
 - Unprepared — hasn't read your resume
 - Pressuring you toward a fast decision
 
 **In the process:**
+
 - Unclear next steps at the end of every stage
 - Long delays without proactive communication
 - Changing role scope or requirements mid-process
@@ -108,12 +115,14 @@ These protect against repeating a toxic environment. Always include at least two
 ## Green Flags to Watch
 
 **In their answers:**
+
 - Specific, concrete examples when asked
 - Acknowledges challenges honestly without defensiveness
 - Asks thoughtful questions about you — not just evaluating, actually curious
 - Clear on timeline and expectations
 
 **In the process:**
+
 - Organized scheduling, communicates proactively
 - Consistent messaging across interviewers
 - Encourages you to take time with any decision

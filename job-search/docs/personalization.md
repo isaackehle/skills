@@ -4,16 +4,17 @@ This skill is public. Personal values and working artifacts stay outside the rep
 
 ## What Lives Where
 
-| Content | Location |
-|---------|---------|
-| Skill instructions (SKILL.md, references, templates) | Public repo — committed |
-| Candidate profile (comp floor, constraints, context) | `PRIVATE_CONFIG_ROOT/job-search/candidate-profile.private.md` — never committed |
-| Experience inventory and reference resumes | `JOB_SEARCH_WORKSPACE/resume/` — never committed |
-| Company files, tailored resumes, job matrix | `JOB_SEARCH_WORKSPACE/` — never committed |
+| Content                                              | Location                                                                       |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Skill instructions (SKILL.md, references, templates) | Public repo — committed                                                        |
+| Candidate profile (comp floor, constraints, context) | `JOB_SEARCH_WORKSPACE/custom/candidate-profile.custom.md` — never committed    |
+| Experience inventory and reference resumes           | `JOB_SEARCH_WORKSPACE/resume/` — never committed                               |
+| Company files, tailored resumes, job matrix          | `JOB_SEARCH_WORKSPACE/` — never committed                                      |
 
-## Using the Private Profile
+## Using the Custom Profile
 
-The agent reads `candidate-profile.private.md` automatically if it exists. It applies your:
+The agent reads `candidate-profile.custom.md` automatically if it exists. It applies your:
+
 - Comp floor and negotiation constraints
 - Schedule constraints and protected time blocks
 - Location and remote requirements
@@ -21,15 +22,16 @@ The agent reads `candidate-profile.private.md` automatically if it exists. It ap
 - Security clearance status
 - Mission preferences
 
-The agent will never expose private profile values unless you explicitly ask.
+The agent will never expose custom profile values unless you explicitly ask.
 
-If the private profile is missing, the agent continues using public templates and calls out what context is unavailable.
+If the custom profile is missing, the agent continues using public templates and calls out what context is unavailable.
 
-## Template → Private Profile
+## Template → Custom Profile
 
-Copy `templates/candidate-profile.template.md` to:
-```
-PRIVATE_CONFIG_ROOT/job-search/candidate-profile.private.md
+Copy `{templates_folder}/candidate-profile.template.md` to:
+
+```shell
+{customization_folder}/candidate-profile.custom.md
 ```
 
 Fill it in fully. The more complete it is, the less you need to re-explain your constraints in every session.

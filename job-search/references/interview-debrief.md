@@ -69,7 +69,7 @@ Add to the bottom of the live notes file, or create a separate `debrief-[Stage]-
 
 Send within 24 hours of each stage. Keep it brief.
 
-```
+```text
 Subject: Thank you — [Your Name] — [Role at Company]
 
 Hi [Name],

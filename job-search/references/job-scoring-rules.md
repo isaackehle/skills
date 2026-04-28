@@ -5,6 +5,7 @@ Research a company thoroughly, then score it using the configured scoring catego
 ## Data Fetch Permission
 
 When scoring a job, assume permission to fetch public data (job boards, company websites, Glassdoor, levels.fyi, LinkedIn public pages, Crunchbase, news articles). However, **flag before fetching** if the source is:
+
 - A paywalled or authenticated site (e.g., LinkedIn premium content, Glassdoor detailed reviews requiring login)
 - A site that might expose personal data or require credentials
 - Anything the user might consider unusual or sensitive
@@ -16,13 +17,15 @@ For routine public sources (job posting pages, company about pages, levels.fyi, 
 Run these before investing in deep research. Any instant disqualifier → stop and document why.
 
 **Instant disqualifiers:**
-- Base salary below $200K (hard floor from private profile)
-- TTC ceiling clearly below $225K comp floor (from private profile)
-- Role requires relocation beyond the candidate's commute radius (check private profile for location constraints)
-- In-office schedule conflicts with protected time blocks (check private profile for schedule constraints)
+
+- Base salary below $200K (hard floor from custom profile)
+- TTC ceiling clearly below $225K comp floor (from custom profile)
+- Role requires relocation beyond the candidate's commute radius (check custom profile for location constraints)
+- In-office schedule conflicts with protected time blocks (check custom profile for schedule constraints)
 - Obvious toxic signals in the JD itself
 
 **Quick checks:**
+
 1. **levels.fyi** — comp range for this role and level at this company
 2. **Glassdoor** — overall rating and recent engineering-specific reviews
 3. **Crunchbase** — funding stage and any recent acquisition/layoff risk
@@ -38,6 +41,7 @@ Use parallel agents when available — one per category is efficient. Otherwise 
 ### Research Sources (Priority Order)
 
 **Must-check every company:**
+
 1. Company website — product, mission, careers page culture signals
 2. Glassdoor — overall rating, engineering-specific reviews, recent trends
 3. levels.fyi — compensation ranges for role and level
@@ -87,9 +91,9 @@ Use parallel agents when available — one per category is efficient. Otherwise 
 
 ## Phase 3: Score and Decide
 
-Load `references/scoring-framework.md` to resolve the active scoring config.
+Load `{references_folder}/scoring-framework.md` to resolve the active scoring config.
 
-1. Resolve categories from the private profile override or defaults (see `references/scoring-defaults.md`)
+1. Resolve categories from the custom profile override or defaults (see `{references_folder}/scoring-defaults.md`)
 2. For each category, in priority order:
    - Score within 1 to `max` using the defined bands
    - Answer the `key_questions` if defined
@@ -103,6 +107,7 @@ Load `references/scoring-framework.md` to resolve the active scoring config.
 ## Phase 4: Interview Updates
 
 After each interview stage, return to the company file and:
+
 - Add date and outcome to the interview timeline
 - Update culture assessment with live observations
 - Adjust scores based on new evidence
@@ -145,13 +150,15 @@ Each company's job description markdown file should include a breakdown of each 
 Each job description in the matrix should have a row in the company's main file that shows the scoring breakdown. The comparison matrix itself should include three separate tables organized by status:
 
 #### Active Positions Table
+
 This table includes all positions where you are in the active hiring process:
 
-| Company                     | Role                    | Level | Status     | Score | Comp Range  | Location | Source   | Added      | Notes                               |
-| --------------------------- | ----------------------- | ----- | ---------- | ----- | ----------- | -------- | -------- | ---------- | ----------------------------------- |
-| [Acme](<companies/Acme/Acme.md>) | Staff SWE — AI Platform | Staff | 📨 Applied | 41/50 | $240k–$280k | Remote   | LinkedIn | 2026-03-15 | Strong technical fit, async culture |
+| Company                        | Role                    | Level | Status    | Score | Comp Range  | Location | Source   | Added      | Notes                               |
+| ------------------------------ | ----------------------- | ----- | --------- | ----- | ----------- | -------- | -------- | ---------- | ----------------------------------- |
+| [Acme](companies/Acme/Acme.md) | Staff SWE — AI Platform | Staff | 📨 Applied | 41/50 | $240k–$280k | Remote   | LinkedIn | 2026-03-15 | Strong technical fit, async culture |
 
 #### Potential Positions Table
+
 This table includes all positions under evaluation or pending action:
 
 | Company                                  | Role                      | Level     | Status      | Score | Comp Range  | Location | Source     | Added      | Notes                                     |
@@ -159,6 +166,7 @@ This table includes all positions under evaluation or pending action:
 | [Beta Corp](companies/BetaCorp/BetaCorp) | Principal Eng — Workflows | Principal | 🔍 Exploring | 37/50 | $220k–$250k | Remote   | Greenhouse | 2026-03-20 | Below floor on base, equity may close gap |
 
 #### Archived Positions Table
+
 This table includes all positions that are no longer being considered:
 
 | Company                               | Role                  | Level  | Status     | Score | Comp Range  | Location | Source    | Added      | Notes                     |
@@ -168,12 +176,12 @@ This table includes all positions that are no longer being considered:
 The company files should contain all the detailed breakdowns of each job posting with their respective scoring tables, and the matrix will show a summary view for each position.
 
 **Status Definitions:**
+
 - **Active Positions:** `📨 Applied`, `📞 Screening`, `🎯 Interviewing`, `🎁 Offer`
 - **Potential Positions:** `🔍 Exploring`, `🚀 Pursuing`, `⏸️ Hold`, `📅 Future`
 - **Archived Positions:** `❌ Rejected`, `➡️ Withdrawn`, `⏱️ Lapsed`
 
 Do not hardcode category names in the output — always read them from the resolved config.
-
 
 ## Deprecations
 

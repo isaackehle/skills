@@ -23,9 +23,9 @@
 
 ## Active Positions
 
-| Role                              | Job ID   | Status      | Score     | Comp Range  | Last Updated |
-| --------------------------------- | -------- | ----------- | --------- | ----------- | ------------ |
-| [Role-Name-ID](<job-descriptions/Role-Name-ID.md>) | JR###### | 🔍 Exploring | —/{total} | $XXXk–$XXXk | YYYY-MM-DD   |
+| Role                                  | Job ID   | Status      | Score     | Comp Range  | Last Updated |
+| ------------------------------------- | -------- | ----------- | --------- | ----------- | ------------ |
+| [Role-Name-ID](roles/Role-Name-ID.md) | JR###### | 🔍 Exploring | —/{total} | $XXXk–$XXXk | YYYY-MM-DD   |
 
 ## Closed / Archived Positions
 
@@ -36,15 +36,16 @@
 
 ## People
 
-| Name                  | Role      | Relationship     | Last Contact |
-| --------------------- | --------- | ---------------- | ------------ |
-| [First-Last](<people/First-Last.md>) | Recruiter | Initial outreach | YYYY-MM-DD   |
+| Name                               | Role      | Relationship     | Last Contact |
+| ---------------------------------- | --------- | ---------------- | ------------ |
+| [First-Last](people/First-Last.md) | Recruiter | Initial outreach | YYYY-MM-DD   |
 
 ---
 
 ## Company Research
 
 ### Glassdoor
+
 - **Overall:** X.X / 5
 - **Work/Life Balance:** X.X / 5
 - **Senior Management:** X.X / 5
@@ -53,11 +54,13 @@
 - **Engineering reviews:**
 
 ### Crunchbase
+
 - **Total Raised:** $XXM
 - **Last Round:** Series X (YYYY-MM)
 - **Investors:**
 
 ### Key Findings
+
 - Red flags:
 - Green flags:
 
@@ -74,4 +77,4 @@
 
 ## Notes
 
-**Comparison Matrix:** [comparison-matrix](<../../comparison-matrix.md#[Company]>)
+**Comparison Matrix:** [comparison-matrix](../../comparison-matrix.md#[Company])

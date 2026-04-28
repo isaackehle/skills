@@ -19,18 +19,21 @@
 ## Top Stories to Bring
 
 ### Story 1: [Theme]
+
 - Situation:
 - What I did:
 - Outcome:
 - Why it's relevant here:
 
 ### Story 2: [Theme]
+
 - Situation:
 - What I did:
 - Outcome:
 - Why it's relevant here:
 
 ### Story 3: [Theme]
+
 - Situation:
 - What I did:
 - Outcome:
@@ -63,7 +66,7 @@
 
 ## Gap Answers Ready
 
-See `references/gap-answers.md` — review before the call.
+See `{references_folder}/gap-answers.md` — review before the call.
 
 ---
 

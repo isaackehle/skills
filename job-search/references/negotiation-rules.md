@@ -23,6 +23,7 @@ TTC = base salary + target bonus + annualized equity value
 ## Comp Floor
 
 Defined in the private candidate profile. The agent must:
+
 - Flag any role where realistic TTC cannot reach the floor
 - Never disclose the floor value in any negotiation context
 - Flag when an offer is "close to" the floor — close is not at

@@ -4,23 +4,23 @@ Capture factual, structured notes in real time. Do not over-process during the c
 
 ## Markers
 
-| Marker | Meaning |
-|--------|---------|
-| `Q:` | Question asked to me |
-| `A:` | My answer summary |
-| `IQ:` | Question I asked the interviewer |
-| `IR:` | Interviewer's response |
-| `RF:` | Red flag |
-| `GF:` | Green flag |
-| `FU:` | Follow-up needed |
-| `?` | Unclear — verify later |
-| `!` | Important moment |
+| Marker | Meaning                          |
+| ------ | -------------------------------- |
+| `Q:`   | Question asked to me             |
+| `A:`   | My answer summary                |
+| `IQ:`  | Question I asked the interviewer |
+| `IR:`  | Interviewer's response           |
+| `RF:`  | Red flag                         |
+| `GF:`  | Green flag                       |
+| `FU:`  | Follow-up needed                 |
+| `?`    | Unclear — verify later           |
+| `!`    | Important moment                 |
 
 ## Output File
 
 Save to `companies/[Company]/interviews/live-notes-[YYYY-MM-DD].md`.
 
-Use `templates/live-notes.template.md` as the starting point.
+Use `{templates_folder}/live-notes.template.md` as the starting point.
 
 ## Principles
 

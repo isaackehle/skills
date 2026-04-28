@@ -1,10 +1,10 @@
 # Scoring Defaults
 
-These are the default scoring categories. Users can override any or all of them in their private profile under `## Scoring Config`.
+These are the default scoring categories. Users can override any or all of them in their custom profile under `## Scoring Config`.
 
 If no override is present, use these exactly as defined.
 
-If the private profile defines a `## Scoring Config` block, it **fully replaces** this file — partial overrides are not supported. Define all categories in the override if you define any.
+If the custom profile defines a `## Scoring Config` block, it **fully replaces** this file — partial overrides are not supported. Define all categories in the override if you define any.
 
 ---
 
@@ -123,11 +123,11 @@ scoring:
 ## How the Agent Uses This
 
 1. At scoring time, load this file first.
-2. Check if the private profile has a `## Scoring Config` block with its own `scoring:` yaml.
+2. Check if the custom profile has a `## Scoring Config` block with its own `scoring:` yaml.
 3. If yes, use the private override. If no, use the defaults above.
 4. Sum each category's `max` to get the total (default: 50).
 5. Generate the scorecard table dynamically from the categories.
-6. Apply the decision bands from `references/scoring-framework.md` using the computed total.
+6. Apply the decision bands from `{references_folder}/scoring-framework.md` using the computed total.
 
 ## Schema Reference
 

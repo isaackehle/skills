@@ -111,11 +111,11 @@ SELECT
         WHEN 'Withdrawn'    THEN '➡️'
         WHEN 'Lapsed'       THEN '⏱️'
     END AS status_icon,
-    '[' || p.company_name || '](<' || p.company_slug || '.md>)' AS company_link,
+    '[' || p.company_name || '](companies/' || p.company_slug || '/' || p.company_slug || '.md)' AS company_link,
     CASE
         WHEN p.jd_filename IS NOT NULL AND p.jd_filename != ''
-        THEN '[' || p.role_title || '](<' || p.jd_filename || '>)'
-        ELSE '[' || p.role_title || '](<' || p.company_slug || '.md>)'
+        THEN '[' || p.role_title || '](companies/' || p.company_slug || '/roles/' || p.jd_filename || ')'
+        ELSE '[' || p.role_title || '](companies/' || p.company_slug || '/' || p.company_slug || '.md)'
     END AS role_link
 FROM positions p;
 ```
@@ -149,13 +149,13 @@ ORDER BY section_order, priority_order,
 
 Computed at generation time from `MAX(added_date, DATE(updated_at))`. The clock resets whenever `updated_at` is bumped (e.g. after a rescore or status update).
 
-| Age | Indicator | Criteria |
-|-----|-----------|----------|
-| Fresh | 🟢 | Most recent activity within 7 days |
-| Aging | 🟡 | Most recent activity 7–14 days ago |
-| Stale | 🟠 | Most recent activity 14–28 days ago |
-| Cold | 🔴 | Most recent activity 28+ days ago |
-| Unknown | (none) | Missing or invalid date |
+| Age     | Indicator | Criteria                            |
+| ------- | --------- | ----------------------------------- |
+| Fresh   | 🟢         | Most recent activity within 7 days  |
+| Aging   | 🟡         | Most recent activity 7–14 days ago  |
+| Stale   | 🟠         | Most recent activity 14–28 days ago |
+| Cold    | 🔴         | Most recent activity 28+ days ago   |
+| Unknown | (none)    | Missing or invalid date             |
 
 The `age_prefix` column in `v_positions` prepends this indicator to the `notes` field in the generated markdown. When writing or updating a row, always bump `updated_at` so the age clock resets correctly.
 

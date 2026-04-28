@@ -34,6 +34,7 @@
 ---
 
 ## Immediate Post-Call Dump
+
 *(Write within 10 minutes of hanging up)*
 
 - What felt strong:
@@ -45,4 +46,4 @@
 
 ## Debrief
 
-*(Complete separately using `references/interview-debrief.md`)*
+*(Complete separately using `{references_folder}/interview-debrief.md`)*

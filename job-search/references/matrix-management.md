@@ -11,14 +11,14 @@ The markdown file exists only so Obsidian can render and link to the matrix. All
 
 ## SQLite Schema
 
-Full DDL (tables, indexes, views, seed data, recovery procedure) lives in **`references/db-schema.md`**. This file documents behavior and protocol only.
+Full DDL (tables, indexes, views, seed data, recovery procedure) lives in **`{references_folder}/db-schema.md`**. This file documents behavior and protocol only.
 
 ### Key design decisions
 
 - **Priority is computed**, never stored. P1 = Pursuing OR Score ≥ 40; P2 = Applied OR (Exploring AND 35–39); P3 = everything else.
 - **Age indicators are computed** at generation time from `MAX(added_date, DATE(updated_at))`. Never stored as emoji. The `review pipeline` command bumps `updated_at` on Keep decisions to reset the age clock.
 - **Section membership is derived** from `status`. Changing status from Exploring to Applied automatically moves a row from Potential to Active.
-- **`company_slug`** matches the folder name under `companies/`. **`jd_filename`** is the basename of the JD file under `companies/[slug]/job-descriptions/`.
+- **`company_slug`** matches the folder name under `companies/`. **`jd_filename`** is the basename of the JD file under `companies/[slug]/roles/`.
 - **`updated_at`** tracks the last review or interaction — not just the original insert time. The `review pipeline` Keep decision updates this field to reset the age clock.
 
 ---
@@ -34,9 +34,10 @@ bash JOB_SEARCH_WORKSPACE/generate_matrix_md.sh [db_path] [output_path]
 Default paths: `comparison-matrix.sqlite` and `comparison-matrix.md` in the workspace directory.
 
 The generator:
+
 1. Queries `v_matrix_sorted` grouped by section
 2. Emits header, comp floor blockquote, and three section tables
-3. Uses CommonMark `[text](<path>)` link syntax (not `[[wikilinks]]`)
+3. Uses standard markdown `[text](path)` link syntax (not `[[wikilinks]]`)
 4. Writes to `comparison-matrix.md`
 
 ### Company file generation
@@ -58,39 +59,39 @@ When regenerating a company file, **only replace the positions tables** — pres
 
 ## Matrix Column Definitions
 
-| Column | Source | Notes |
-|--------|--------|-------|
-| Company | `company_name` → CommonMark link to company file | `[Name](<Company.md>)` — filename only, no path prefix |
-| Role | `role_title` + `jd_filename` → CommonMark link | `[Title](<jd_filename>)` |
-| Level | `level` column | Free-text: Staff, Principal, Senior, etc. |
-| Priority | **Computed** from status + score | P1/P2/P3 — never manually set |
-| Status | `status` column + `status_icon` from view | Icon + text from status table |
-| Score | `score` column | NULL = "TBD" |
-| Max | `max_score` column | Default 50 |
-| Comp Range | `comp_range` column | Free text |
-| Location | `location` column | Free text |
-| Source | `source` column | Where the role was found |
-| Source URL | `source_url` column | Direct link to posting |
-| Added | `added_date` column | YYYY-MM-DD |
-| Notes | `notes` column with `age_prefix` prepended | Age prefix is computed, not stored |
+| Column     | Source                                           | Notes                                          |
+| ---------- | ------------------------------------------------ | ---------------------------------------------- |
+| Company    | `company_name` → CommonMark link to company file | `[Name](companies/Company/Company.md)`         |
+| Role       | `role_title` + `jd_filename` → CommonMark link   | `[Title](companies/Company/roles/jd_filename)` |
+| Level      | `level` column                                   | Free-text: Staff, Principal, Senior, etc.      |
+| Priority   | **Computed** from status + score                 | P1/P2/P3 — never manually set                  |
+| Status     | `status` column + `status_icon` from view        | Icon + text from status table                  |
+| Score      | `score` column                                   | NULL = "TBD"                                   |
+| Max        | `max_score` column                               | Default 50                                     |
+| Comp Range | `comp_range` column                              | Free text                                      |
+| Location   | `location` column                                | Free text                                      |
+| Source     | `source` column                                  | Where the role was found                       |
+| Source URL | `source_url` column                              | Direct link to posting                         |
+| Added      | `added_date` column                              | YYYY-MM-DD                                     |
+| Notes      | `notes` column with `age_prefix` prepended       | Age prefix is computed, not stored             |
 
 ---
 
 ## Status Values
 
-| Status | Icon | Section |
-|--------|------|---------|
-| Exploring | 🔍 | Potential |
-| Pursuing | 🚀 | Potential |
-| Applied | ✅ | Active |
-| Screening | 📞 | Active |
-| Interviewing | 🎯 | Active |
-| Hold | ⏸️ | Potential |
-| Future | 📅 | Potential |
-| Offer | 🎁 | Active |
-| Rejected | ❌ | Archived |
-| Withdrawn | ➡️ | Archived |
-| Lapsed | ⏱️ | Archived |
+| Status       | Icon | Section   |
+| ------------ | ---- | --------- |
+| Exploring    | 🔍    | Potential |
+| Pursuing     | 🚀    | Potential |
+| Applied      | ✅    | Active    |
+| Screening    | 📞    | Active    |
+| Interviewing | 🎯    | Active    |
+| Hold         | ⏸️    | Potential |
+| Future       | 📅    | Potential |
+| Offer        | 🎁    | Active    |
+| Rejected     | ❌    | Archived  |
+| Withdrawn    | ➡️    | Archived  |
+| Lapsed       | ⏱️    | Archived  |
 
 Default on add: **Exploring**. Never write Pursuing without explicit user confirmation.
 
@@ -100,11 +101,11 @@ Default on add: **Exploring**. Never write Pursuing without explicit user confir
 
 Priority is **always computed** from status and score:
 
-| Priority | Criteria | Description |
-|----------|----------|-------------|
-| P1 | Status = Pursuing **OR** Score ≥ 40 | Top targets |
-| P2 | Status = Applied **OR** (Exploring AND Score 35–39) | Good candidates |
-| P3 | Status = Hold **OR** Score < 35 **OR** TBD | Low priority |
+| Priority | Criteria                                            | Description     |
+| -------- | --------------------------------------------------- | --------------- |
+| P1       | Status = Pursuing **OR** Score ≥ 40                 | Top targets     |
+| P2       | Status = Applied **OR** (Exploring AND Score 35–39) | Good candidates |
+| P3       | Status = Hold **OR** Score < 35 **OR** TBD          | Low priority    |
 
 When in doubt, the user decides. To override computed priority, change the status or score.
 
@@ -114,13 +115,13 @@ When in doubt, the user decides. To override computed priority, change the statu
 
 Computed at generation time from `MAX(added_date, DATE(updated_at))`:
 
-| Age | Indicator | Criteria |
-|-----|-----------|----------|
-| Fresh | 🟢 | Most recent activity within 7 days |
-| Aging | 🟡 | Most recent activity 7–14 days ago |
-| Stale | 🟠 | Most recent activity 14–28 days ago |
-| Cold | 🔴 | Most recent activity 28+ days ago |
-| Unknown | (none) | Missing or invalid date |
+| Age     | Indicator | Criteria                            |
+| ------- | --------- | ----------------------------------- |
+| Fresh   | 🟢         | Most recent activity within 7 days  |
+| Aging   | 🟡         | Most recent activity 7–14 days ago  |
+| Stale   | 🟠         | Most recent activity 14–28 days ago |
+| Cold    | 🔴         | Most recent activity 28+ days ago   |
+| Unknown | (none)    | Missing or invalid date             |
 
 When `review pipeline` keeps a role, `updated_at` is set to now — resetting the age clock to 🟢 without changing the original `added_date`.
 
@@ -152,12 +153,12 @@ No lockfile needed — SQLite WAL mode handles concurrent access natively.
 
 ### Operation types
 
-| Operation | SQL | When |
-|-----------|-----|------|
-| Insert | `INSERT INTO positions (...)` | New role added |
-| Update | `UPDATE positions SET ... WHERE company_slug = ? AND role_title = ?` | Status, score, notes change |
-| Move | `UPDATE positions SET status = ? WHERE ...` | Status crosses section boundary — handled automatically |
-| Delete | `DELETE FROM positions WHERE ...` | Role removed (use sparingly; prefer archiving) |
+| Operation | SQL                                                                  | When                                                    |
+| --------- | -------------------------------------------------------------------- | ------------------------------------------------------- |
+| Insert    | `INSERT INTO positions (...)`                                        | New role added                                          |
+| Update    | `UPDATE positions SET ... WHERE company_slug = ? AND role_title = ?` | Status, score, notes change                             |
+| Move      | `UPDATE positions SET status = ? WHERE ...`                          | Status crosses section boundary — handled automatically |
+| Delete    | `DELETE FROM positions WHERE ...`                                    | Role removed (use sparingly; prefer archiving)          |
 
 Rows are identified by `(company_slug, role_title)` — not by line number or ID.
 
@@ -186,5 +187,5 @@ Do not delete matrix rows — the history is valuable.
 
 - **Pre-migration backup:** `comparison-matrix.md.pre-sqlite-backup`
 - **SQLite backup:** `VACUUM INTO 'comparison-matrix.sqlite.backup'`
-- **If SQLite is corrupted:** See the full recovery procedure in `references/db-schema.md`
+- **If SQLite is corrupted:** See the full recovery procedure in `{references_folder}/db-schema.md`
 - **If SQLite is unavailable:** The markdown file can be read for display, but writes are blocked

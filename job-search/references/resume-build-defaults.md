@@ -6,14 +6,15 @@ Apply every time a resume is produced. Do not deviate without explicit user inst
 
 1. `resume/experience-inventory.md` — master source of truth, all roles and accomplishments
 2. Select the most relevant reference resume for the target role:
-   - `resume/reference/fullstack/Isaac_Kehle-Resume.md` — AI/platform/full-stack roles
-   - `resume/reference/general/Isaac_Kehle-Resume.md` — general roles (full-stack + embedded breadth)
-   - `resume/reference/embedded/Isaac_Kehle-Resume.md` — embedded systems/edge AI roles
+   - `resume/reference/fullstack/<Candidate name>-Resume.md` — AI/platform/full-stack roles
+   - `resume/reference/general/<Candidate name>-Resume.md` — general roles (full-stack + embedded breadth)
+   - `resume/reference/embedded/<Candidate name>-Resume.md` — embedded systems/edge AI roles
 3. Tailor against the specific job description
 
 ## Output
 
 Always produce both formats:
+
 - `[CandidateName]-[identifier].md` — reviewed in your vault first
 - `[CandidateName]-[identifier]-v1.docx` — generated after user approves the markdown
 
@@ -45,18 +46,21 @@ Increment version suffix on substantive changes: `[CandidateName]-1978573-v2.md`
 Use `experience-inventory.md` as source. Keep structure: Career Highlights → Professional Experience → Education → Technical Expertise → Patent.
 
 **Step 2: Customize for the JD**
+
 - Lead each role description with the specific stack/languages from the JD
 - Highlight accomplishments and technical decisions most relevant to the posting
 - Reorder Technical Expertise section — put JD-matching tech first
 - Mirror keywords from the JD where truthful and natural
 
 **Step 3: Build the markdown version**
+
 - No footers, job URLs, wiki-links, or framing notes in the file body
 - Format for clean review in your vault
 - User reviews and approves before DOCX is generated
 
 **Step 4: Generate DOCX**
 Convert from markdown. Verify the output does not contain:
+
 - Footer notes like `*Tailored for: [Company]*`
 - Any markdown-only metadata or framing text
 - Wiki-links or vault-specific syntax
@@ -80,4 +84,4 @@ Convert from markdown. Verify the output does not contain:
 
 ## AI Tooling on Resume
 
-See `references/ai-tooling-framing.md` for exact bullet language and hard guardrails on what to claim vs. what to list as evaluating-only.
+See `{references_folder}/ai-tooling-framing.md` for exact bullet language and hard guardrails on what to claim vs. what to list as evaluating-only.

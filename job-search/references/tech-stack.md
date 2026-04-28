@@ -41,5 +41,5 @@ ARM, PowerPC, RTOS, Linux drivers, ASIC design, firmware
 
 ## Notes
 
-- See `references/ai-tooling-framing.md` for exact language on how to position AI tools
-- See `references/gap-answers.md` for scripted answers on gaps (Kafka, Go, NestJS, etc.)
+- See `{references_folder}/ai-tooling-framing.md` for exact language on how to position AI tools
+- See `{references_folder}/gap-answers.md` for scripted answers on gaps (Kafka, Go, NestJS, etc.)

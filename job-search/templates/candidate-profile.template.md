@@ -1,6 +1,6 @@
 # Candidate Profile
 
-This file stays in PRIVATE_CONFIG_ROOT — never committed to the public repo.
+This file stays in your customization folder — never committed to the public repo.
 
 ## Background
 
@@ -58,9 +58,9 @@ This file stays in PRIVATE_CONFIG_ROOT — never committed to the public repo.
 
 ## Scoring Config
 
-*(Optional. If defined, this fully replaces the default scoring categories in `references/scoring-defaults.md`. If omitted, defaults apply.)*
+*(Optional. If defined, this fully replaces the default scoring categories in `{CUSTOMIZATION_ROOT}/scoring-framework.md`. If omitted, defaults apply.)*
 
-*(Copy the `scoring:` yaml block from `references/scoring-defaults.md` and modify it here. You can change category names, max scores, bands, descriptions, add new categories, or remove existing ones. The agent will read whatever is defined here and generate scorecards dynamically.)*
+*(Copy the `scoring:` yaml block from `{CUSTOMIZATION_ROOT}/scoring-framework.md` and modify it here. You can change category names, max scores, bands, descriptions, add new categories, or remove existing ones. The agent will read whatever is defined here and generate scorecards dynamically.)*
 
 ```yaml
 # scoring:

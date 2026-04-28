@@ -1,6 +1,6 @@
 # [Company Name] — [Role Title]
 
-**Company:** [Company](<companies/[Company]/[Company].md>)
+**Company:** [Company](companies/[Company]/[Company].md)
 **Job ID:** JR######
 **Status:** 🔍 Exploring
 **Score:** —/{total}
@@ -32,19 +32,22 @@
 ## Job Description
 
 ### What You'll Do
+
 -
 
 ### What They Need
+
 -
 
 ### Ways to Stand Out
+
 -
 
 ---
 
 ## Scoring
 
-*(Generate this table dynamically from the active scoring config. See `references/scoring-framework.md`.)*
+*(Generate this table dynamically from the active scoring config. See `{references_folder}/scoring-framework.md`.)*
 
 | Category        | Score           | Evidence |
 | --------------- | --------------- | -------- |
@@ -55,16 +58,18 @@
 **Recommendation:**
 
 **Key Risks:**
+
 -
 
 **Key Opportunities:**
+
 -
 
 ---
 
 ## Resume
 
-- **Tailored Resume:** [CandidateName]-[identifier](<../resumes/CandidateName-identifier.md>)
+- **Tailored Resume:** [CandidateName]-[identifier](../resumes/CandidateName-identifier.md)
 - **Word Document:** `resumes/[CandidateName]-[identifier]-v1.docx`
 
 ---
