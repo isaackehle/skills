@@ -1,6 +1,6 @@
 # [Company Name] — [Role Title]
 
-**Company:** [Company](companies/[Company]/[Company].md)
+**Company:** [Company](companies/<snake_case>/<snake_case>.md)
 **Job ID:** JR######
 **Status:** 🔍 Exploring
 **Score:** —/{total}
@@ -41,13 +41,11 @@
 
 ### Ways to Stand Out
 
--
-
----
+- ***
 
 ## Scoring
 
-*(Generate this table dynamically from the active scoring config. See `{references_folder}/scoring-framework.md`.)*
+_(Generate this table dynamically from the active scoring config. See `{references_folder}/scoring-framework.md`.)_
 
 | Category        | Score           | Evidence |
 | --------------- | --------------- | -------- |
@@ -59,18 +57,14 @@
 
 **Key Risks:**
 
--
+- **Key Opportunities:**
 
-**Key Opportunities:**
-
--
-
----
+- ***
 
 ## Resume
 
-- **Tailored Resume:** [CandidateName]-[identifier](../resumes/CandidateName-identifier.md)
-- **Word Document:** `resumes/[CandidateName]-[identifier]-v1.docx`
+- **Tailored Resume:** `[<candidate_name>-Resume](../resumes/<job_id>/<candidate_name>-Resume.md)`
+- **Word Document:** `resumes/<job_id>/<candidate_name>-Resume.docx`
 
 ---
 
@@ -94,4 +88,4 @@ See `interviews/` for prep and debrief files.
 
 ## Notes
 
-**Comparison Matrix:** [comparison-matrix](<comparison-matrix.md#[Company]>)
+**Comparison Matrix:** [comparison-matrix](comparison-matrix.md#[Company])

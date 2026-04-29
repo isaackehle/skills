@@ -38,7 +38,7 @@ job_search/
     └── roles/[Role].md   # Source JDs for gap analysis
 ```
 
-If a custom profile exists at `{customization_folder}/candidate-profile.custom.md`, apply it to understand the candidate's current skill set before performing gap analysis.
+If a custom profile exists at `{customization_folder}/candidate-profile.md`, apply it to understand the candidate's current skill set before performing gap analysis.
 
 ## Commands
 
@@ -48,7 +48,7 @@ Extract technologies from a JD and identify skill gaps against the candidate's c
 
 1. **Fetch the JD** from URL or read from `{companies_folder}/[Company]/roles/`
 2. **Extract technologies** — categorize into: Languages, Frameworks, Infrastructure, AI/ML, Security, Domain Knowledge
-3. **Map to current skills** — using `candidate-profile.custom.md` + `{references_folder}/tech-stack.md` (from job-search skill) + any explicitly stated skills
+3. **Map to current skills** — using `candidate-profile.md` + `{references_folder}/tech-stack.md` (from job-search skill) + any explicitly stated skills
 4. **Rate gap severity** per technology:
    - 🔴 Critical — Required, no production experience
    - 🟠 Significant — Required, partial/related experience only

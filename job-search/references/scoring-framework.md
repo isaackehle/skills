@@ -4,7 +4,7 @@
 
 Scoring categories are **configurable**. The agent reads them at scoring time from one of two sources:
 
-1. **Private override** — the candidate profile discovered during config discovery (default path: `{customization_folder}/candidate-profile.custom.md`), under `## Scoring Config`
+1. **Private override** — the candidate profile discovered during config discovery (default path: `{customization_folder}/candidate-profile.md`), under `## Scoring Config`
 2. **Defaults** — `{references_folder}/scoring-defaults.md`
 
 If the custom profile defines a `## Scoring Config` block, it fully replaces the defaults. Otherwise, defaults apply.

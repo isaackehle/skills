@@ -18,7 +18,7 @@ Capture factual, structured notes in real time. Do not over-process during the c
 
 ## Output File
 
-Save to `companies/[Company]/interviews/live-notes-[YYYY-MM-DD].md`.
+Save to `companies/[Company]/discussion/live-notes-[YYYY-MM-DD].md`.
 
 Use `{templates_folder}/live-notes.template.md` as the starting point.
 

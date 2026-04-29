@@ -1,13 +1,13 @@
-# Live Notes — [Company] / [Stage] / [Date]
+# Live Call Notes - {{date}}
 
-**Date:**
-**Time:**
-**Interviewers:**
-**Goal for this call:**
+**Contact Name:** {{name}}
+**Phone:** {{phone}}
+**LinkedIn:** {{linkedin}}
+**Email:** {{email}}
 
----
+## Notes
+{{notes}}
 
-## Running Notes
 
 - Q:
 - A:

@@ -33,7 +33,7 @@ Common requests:
 **Why separate:** External recruiters are your reconnaissance—they give away real company info (health, structure, compensation, culture) in a way internal screens don't. This is an information-gathering phase, not a performance eval.
 
 **Template location:** `{templates_folder}/external-recruiter-screen.md`
-**Instance location:** `{companies_folder}/[Company]/Interviews/[Recruiter]-Debrief-[Date].md` (filled-in version after call)
+**Instance location:** `{companies_folder}/[Company]/interviews/[Recruiter]-Debrief-[Date].md` (filled-in version after call)
 
 **Focus areas (not prep, but intelligence gathering):**
 

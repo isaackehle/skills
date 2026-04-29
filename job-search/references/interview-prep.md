@@ -25,14 +25,17 @@ Prepare for one interview stage at a time. Output goes to `companies/[Company]/i
 ---
 
 ## What This Stage Is Testing
+
 -
 
 ## My Goal for This Conversation
+
 -
 
 ## Top Stories to Bring (3–5)
 
 ### Story 1: [Theme]
+
 - Situation:
 - What I did:
 - Outcome:
@@ -41,22 +44,28 @@ Prepare for one interview stage at a time. Output goes to `companies/[Company]/i
 ## Questions I Will Ask
 
 ### Must-Ask (Non-Negotiable)
+
 | Question | Why I'm Asking | Green Answer | Red Flag Answer |
 | -------- | -------------- | ------------ | --------------- |
 
 ### Should-Ask
+
 -
 
 ### Nice-to-Ask (If Time)
+
 -
 
 ## Risks to Probe
+
 -
 
 ## Gap Answers Ready
+
 See `{references_folder}/gap-answers.md` — review before the call.
 
 ## Scripted Openings
+
 - "Tell me about yourself": [60–90 second script]
 - "Why are you looking?": [What you're moving toward, not what you're escaping]
 - "Why [Company]?": [Mission + model + role fit — be specific]

@@ -11,7 +11,7 @@ Replace `<your-vault>` with the path to your notes vault (e.g. a job search work
 
 ## What Never Goes in the Public Repo
 
-- `candidate-profile.custom.md`
+- `candidate-profile.md`
 - `experience-inventory.md`
 - `comparison-matrix.md`
 - Reference resumes
@@ -31,6 +31,6 @@ ln -sfn <your-vault>/skills ~/.config/opencode/skills
 ## First-Time Setup
 
 1. Create `job_search/comparison-matrix.md` — copy from `examples/comparison-matrix.example.md`
-2. Copy `candidate-profile.template.md` to `{customization_folder}/candidate-profile.custom.md` and fill it in
+2. Copy `candidate-profile.template.md` to `{customization_folder}/candidate-profile.md` and fill it in
 3. Add your `experience-inventory.md` to `{resume_folder}/`
 4. Start adding companies with `add to matrix`
