@@ -211,7 +211,7 @@ If any role still shows a status of "Applied", the skill should prompt you to ch
 
 ### Naming Convention for Companies
 
-All company folder names and main markdown filenames follow a **snake_case identifier**. This identifier is derived from the company name by: This identifier is derived from the company name by:
+All company folder names and main markdown filenames follow a **snake_case identifier**. This identifier is derived from the company name by:
 
 - Convert the name to lowercase.
 - Replace spaces and periods with underscores.
