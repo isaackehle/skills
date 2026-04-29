@@ -283,27 +283,10 @@ Update an existing contact for a company.
 ### `log-live-notes`
 
 Capture live notes during a call.
-
-- When starting, ask whether to log the contact info now or at the end (default: now).
-- Prompt for contact name (with autocomplete from existing contacts listed on the company page) or allow skipping.
-- If postponed, after the notes are finished, prompt for the same contact details.
-- Store the notes in `companies/[Company]/interviews/` as a markdown file named with the current date and "live-notes" suffix.
-- If the company folder does not exist, create it automatically.
-- The notes file uses the `live-notes.template.md` template.
-
-- When starting, ask whether to log the contact info now or at the end (default: now).
-- Prompt for contact name (with autocomplete from existing contacts listed on the company page) or allow skipping.
-- If postponed, after the notes are finished, prompt for the same contact details.
-- Store the notes in `companies/[Company]/interviews/` as a markdown file named with the current date and "live-notes" suffix.
-- If the company folder does not exist, create it automatically.
-- The notes file uses the `live-notes.template.md` template.
-
-- When starting, ask whether to log the contact info now or at the end (default: now).
-- Prompt for contact name (with autocomplete from existing contacts listed on the company page) or allow skipping.
-- If postponed, after the notes are finished, prompt for the same contact details.
-- Store the notes in `companies/[Company]/interviews/` as a markdown file named with the current date and "live-notes" suffix.
-- If the company folder does not exist, create it automatically.
-- The notes file uses the `live-notes.template.md` template.
+- Ask whether to log contact info now or after the call (default: now).
+- Prompt for contact name (autocomplete from existing contacts) or allow skipping.
+- Save notes to `companies/[Company]/interviews/` as `<date>-live-notes.md` using the `live-notes.template.md` template.
+- Create the company folder automatically if missing.
 
 Collect details from a phone call and store them in the company folder.
 
