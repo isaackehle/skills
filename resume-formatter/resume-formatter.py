@@ -12,6 +12,8 @@ import sys
 from docx import Document
 from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
 
 # Colors
 BLUE = RGBColor(0x2E, 0x5F, 0xA3)
@@ -116,6 +118,17 @@ def parse_markdown(md_content):
         if stripped.startswith("---"):
             continue
 
+        # Table rows (start with |)
+        if stripped.startswith("|"):
+# In parse_markdown, don't skip separator rows but treat them as regular rows
+                # Skip separator rows (e.g., |---|---|)
+                # if all(c in "|-: " for c in stripped):
+                #     continue
+                # Instead, process all | lines including separators
+
+            current_items.append("TABLE|" + stripped)
+            continue
+
         # Regular content
         if stripped:
             current_items.append(stripped)
@@ -195,7 +208,102 @@ def build_resume(sections, doc):
         para.paragraph_format.space_before = Pt(6)
 
         # Section content
-        for item in items:
+        # First, group consecutive TABLE| items into table blocks
+        grouped = []
+        i = 0
+        while i < len(items):
+            if items[i] is not None and items[i].startswith("TABLE|"):
+                table_rows = []
+                while i < len(items) and items[i] is not None and items[i].startswith("TABLE|"):
+                    raw = items[i][6:]  # Strip "TABLE|" prefix
+                    cells = [c.strip() for c in raw.split("|")][1:-1]
+                    table_rows.append(cells)
+                    i += 1
+                grouped.append(("__TABLE__", table_rows))
+            else:
+                grouped.append(("__TEXT__", items[i] if items[i] is not None else ""))
+                i += 1
+
+        for item_type, item_value in grouped:
+            if item_type == "__TABLE__":
+                table_rows = item_value
+                if not table_rows:
+                    continue
+                num_cols = max(len(r) for r in table_rows)
+                table = doc.add_table(rows=len(table_rows), cols=num_cols)
+                # Fixed layout for consistent column widths
+                table.autofit = False
+
+                # Set table width to 100% of page (modify existing tblW if present)
+                tbl_pr = table._tbl.tblPr
+                existing_tbl_w = tbl_pr.find(qn("w:tblW"))
+                if existing_tbl_w is not None:
+                    existing_tbl_w.set(qn("w:w"), "5000")
+                    existing_tbl_w.set(qn("w:type"), "pct")
+                else:
+                    tbl_w = OxmlElement("w:tblW")
+                    tbl_w.set(qn("w:w"), "5000")
+                    tbl_w.set(qn("w:type"), "pct")
+                    tbl_pr.append(tbl_w)
+
+                # Remove all borders via XML
+                borders = OxmlElement("w:tblBorders")
+                for border_name in ("top", "left", "bottom", "right", "insideH", "insideV"):
+                    el = OxmlElement(f"w:{border_name}")
+                    el.set(qn("w:val"), "nil")
+                    borders.append(el)
+                tbl_pr.append(borders)
+
+                # Set column widths based on column count
+                if num_cols == 2:
+                    col_widths = [Inches(2.0), Inches(4.5)]
+                elif num_cols == 3:
+                    col_widths = [Inches(2.5), Inches(2.5), Inches(1.5)]
+                elif num_cols == 4:
+                    col_widths = [Inches(2.0), Inches(2.0), Inches(1.3), Inches(1.2)]
+                else:
+                    col_widths = [Inches(6.5 / num_cols)] * num_cols
+
+                # Set grid column widths to match (required for fixed layout)
+                for j, width in enumerate(col_widths):
+                    dxa = int(width / 635)
+                    grid_col = table.columns[j]._gridCol
+                    grid_col.set(qn("w:w"), str(dxa))
+                    grid_col.set(qn("w:type"), "dxa")
+
+                for i, row_cells in enumerate(table_rows):
+                    for j, cell_text in enumerate(row_cells):
+                        if j >= num_cols:
+                            break
+                        cell = table.cell(i, j)
+                        # Set column width
+                        if j < len(col_widths):
+                            cell.width = col_widths[j]
+                        # Clear default paragraph and write
+                        cell.paragraphs[0].clear()
+                        run = cell.paragraphs[0].add_run(cell_text)
+                        run.font.size = Pt(9)
+                        run.font.name = "Arial"
+                        run.font.color.rgb = BLACK
+                        if i == 0:
+                            run.font.bold = True
+                        cell.paragraphs[0].paragraph_format.space_before = Pt(2)
+                        cell.paragraphs[0].paragraph_format.space_after = Pt(2)
+
+                # Add thin bottom border to header row
+                for cell in table.rows[0].cells:
+                    tc_pr = cell._tc.tcPr
+                    tc_borders = OxmlElement("w:tcBorders")
+                    bottom = OxmlElement("w:bottom")
+                    bottom.set(qn("w:val"), "single")
+                    bottom.set(qn("w:sz"), "8")
+                    bottom.set(qn("w:color"), "666666")
+                    tc_borders.append(bottom)
+                    tc_pr.append(tc_borders)
+
+                continue
+
+            item = item_value
             # Job header (### style in content)
             if item.startswith("### "):
                 job_line = item[4:].strip()

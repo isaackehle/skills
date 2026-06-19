@@ -177,7 +177,11 @@ When a role ends (Rejected, Withdrawn, or stale):
 1. `UPDATE positions SET status = 'Rejected'|'Withdrawn'|'Lapsed', notes = notes || '; ' || :outcome WHERE ...`
 2. Regenerate `comparison-matrix.md`
 3. Update the company file's "Active Positions" table
-4. Move company files to `archive/` only if **no active/potential positions remain** for that company
+4. **Auto-archive check:** After updating a role to Rejected, Withdrawn, or Lapsed, query for any remaining Active or Potential positions for that `company_slug`. If none remain, automatically archive the entire company:
+   - Move the company folder from `companies/<snake_case>/` to `archive/<snake_case>/`
+   - Update the company markdown file status to Archived
+   - Ensure the matrix row is in the Archived section
+   - Do not prompt the user for confirmation on the folder move when the auto-archive rule triggers
 
 Do not delete matrix rows — the history is valuable.
 

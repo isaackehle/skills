@@ -4,7 +4,7 @@ description: "End-to-end job search skill for Claude Code and OpenCode. Covers o
 license: MIT
 metadata:
   author: ikehle
-  version: "3.4.0"
+  version: 3.5.0
 ---
 
 # Job Search
@@ -44,7 +44,7 @@ On the first invocation of any command in a session, run config discovery. **Pri
 
 1. **Check local `./memory` folder** for `job_search_workspace` (fallback to session memory if not found).
 2. If found, verify the path exists on disk. If valid, proceed to Step 2.
-3. If missing or invalid, ask: **"What is the absolute path to your job search workspace?"**
+3. If missing or invalid, ask: **"What is the absolute path to your job search workspace?" (Leave blank to use the default workspace)**
 4. Once you have the workspace path, ask: **"Should I scan this workspace to discover existing content (resumes, company folders, templates, etc.)?"** (yes/no, default: yes)
 
 ### Step 2: Locate and Load Candidate Profile
@@ -166,7 +166,29 @@ Create an interview prep document. Load `{references_folder}/interview-prep.md`.
 - Output: dated file at `companies/[Company]/interviews/[Stage]-[Date].md`
 - Cover: what the stage is testing, 3–5 strong stories, questions to ask, risks to probe
 
-### `take notes` / `live notes`
+### `add call`
+
+Add a call transcript or discussion note for a contact person.
+
+- Ensure the company folder and `people/` subfolder exist.
+- Create a markdown file in `companies/<snake_case>/discussions/` (e.g., `call-YYYY-MM-DD.md`).
+- At the top of the transcript, list participants and link the call to the relevant contact file using a line such as:
+  `- **Call:** [Call YYYY‑MM‑DD](../discussions/call-YYYY-MM-DD.md)`.
+- The skill automatically updates the contact’s markdown file (`people/<name>.md`) to add a line under the contact details linking to the call (e.g., `- **Call:** [Call YYYY‑MM‑DD](../discussions/call-YYYY-MM-DD.md)`).
+- Optionally, update the contact’s **People** table on the company page to include a link to the discussion if desired.
+- No additional internal links are required beyond the relative path as shown.
+
+This procedure mirrors the `live notes` workflow but is intended for full‑call transcripts rather than live note‑taking.
+
+### `remove call`
+
+Remove a call link from a contact’s markdown file.
+
+- Prompt for the company (default: current context company) and the contact name.
+- Locate the contact file in `companies/<snake_case>/people/`.
+- Delete any line matching the pattern `- **Call:** [...]` (e.g., a call link to a transcript).
+- Optionally, re‑format the contact file using the `people-entry.template.md` to ensure it conforms to the standard template after removal.
+- No other files are modified.
 
 Start a structured live note-taking session. Load `{references_folder}/discussion-note-taker.md`.
 
@@ -206,6 +228,10 @@ Read and display the current `comparison-matrix.md` in a clean summary format.
 Move a company to archive status in the matrix. Set final status (Rejected, Withdrawn). Do **not** delete company files — move them to `archive/[Company]/`. Additionally, **update the company markdown file**: remove the role entry from the **Active Positions** table, add it to the **Closed / Archived Positions** table with the final status and a link to the archived role file.
 
 If any role still shows a status of "Applied", the skill should prompt you to choose a final archived status (e.g., Rejected, Withdrawn, Offer Received) before completing the archiving process.
+
+**Role-level archiving:** When individual roles within a company are no longer in play (rejected, withdrawn, lapsed, expired, or otherwise inactive), move those role files from `companies/<snake_case>/roles/` to `companies/<snake_case>/archive/`. Remove their rows from the comparison-matrix.md. Keep the company in `companies/` as long as it has at least one active role.
+
+**Auto-archive rule:** When a role is updated to ❌ Rejected, ➡️ Withdrawn, or ⏱️ Lapsed, automatically check whether any Active or Potential roles remain for that company. If this was the last role, automatically archive the entire company: move the folder from `companies/<snake_case>/` to `archive/<snake_case>/`, update the company markdown file status to Archived, and ensure the matrix row is in the Archived section.
 
 **Implementation note:** When updating the tables, scan both the `roles/` and `archive/` subfolders of the company directory, collect all role markdown files, and rebuild the **Active Positions** and **Closed / Archived Positions** tables from scratch, ensuring no duplicate entries appear.
 
@@ -264,8 +290,8 @@ Add a contact person to a company.
 - Prompt for contact name, role/title, phone, email, LinkedIn profile (each can be skipped).
 - If the company folder does not exist, create it automatically.
 - Ensure a `people` folder exists inside the company folder.
-- Create a markdown file for the person inside `people/` using Capitalized‑Kebab‑Case for the filename (e.g., `Meghan-Domeck.md`).
-- Use the `contact-entry.template.md` template for formatting the file content.
+- Create a markdown file for the person inside `people/` using snake_case for the filename (e.g., `meghan_domeck.md`).
+- Use the `people-entry.template.md` template for formatting the file content.
 - Append a row to the **People** table in the company page (`<Company>.md`) linking to the new contact file.
 - After adding, offer to open the company page for review.
 
@@ -277,12 +303,13 @@ Update an existing contact for a company.
 - List the markdown files in `<company>/people/` and let the user pick one (displaying names derived from filenames).
 - When updating an existing contact row in the People table, ensure the link points to the corresponding markdown file in the `people/` folder (e.g., `[Contact Name](people/Contact-Name.md)`). If the link is missing or outdated, automatically update it to match the current file name.
 - For each field, prompt the user with the current value in brackets (e.g., `Title [Current Title]:`). Hitting **Enter** keeps the existing value.
-- After gathering updates, rewrite the contact file preserving Capitalized‑Kebab‑Case filename.
+- After gathering updates, rewrite the contact file **using the `people-entry.template.md` format**, removing any existing call link lines and ensuring the file matches the template structure.
 - Offer to open the updated contact file for review.
 
 ### `log-live-notes`
 
 Capture live notes during a call.
+
 - Ask whether to log contact info now or after the call (default: now).
 - Prompt for contact name (autocomplete from existing contacts) or allow skipping.
 - Save notes to `companies/[Company]/interviews/` as `<date>-live-notes.md` using the `live-notes.template.md` template.
@@ -300,8 +327,9 @@ Collect details from a phone call and store them in the company folder.
 Update score, status, or content for an existing position. Load `{references_folder}/rescore-and-update.md`.
 
 - Triggers: new comp data, post-interview signals, layoff news, status change
-- Updates JD file → markdown matrix → sqlite (always in this order)
-- Never leave sqlite out of sync with the markdown matrix
+- Updates JD file → markdown matrix (always in this order)
+- **Rescoring guardrail:** When rescoring, only update scores/content in-place. Do not change status to Elapsed or archive the role unless the user explicitly requests it.
+- **Elapsed threshold check:** If time since last activity exceeds the elapsed threshold (14 days for Applied, 30 days for Exploring, 60 days for Interviewing), prompt the user: "This role has been inactive for X days. Would you like to mark it as Elapsed?"
 
 ## Hard Rules
 

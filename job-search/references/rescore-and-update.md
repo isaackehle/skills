@@ -143,6 +143,7 @@ When only the status changes (e.g., Applied → Screening, or any → Rejected):
 2. Update the matrix row status column and notes
 3. Update sqlite `status`, `notes`, `updated_at`
 4. If moving to Archived: move matrix row to Archived section
+5. **Auto-archive check:** If the new status is Rejected, Withdrawn, or Lapsed, query sqlite for any remaining Active or Potential positions for that `company_slug`. If none remain, automatically archive the entire company folder (move `companies/<snake_case>/` to `archive/<snake_case>/`) and update the company markdown file status to Archived.
 
 Do not touch the scoring table unless evidence changed.
 

@@ -4,7 +4,7 @@ description: "Analyze job descriptions for technology gaps, design targeted lear
 license: MIT
 metadata:
   author: ikehle
-  version: "1.0"
+  version: 1.1.0
 ---
 
 # Tech Skill Development
@@ -23,7 +23,6 @@ Set these to your actual paths.
 Expected layout:
 
 ```
-tech learning/
 ├── plans/                    # Learning project plans (one per target role)
 ├── projects/                 # Built project code (referenced from plans)
 ├── progress.md               # Running progress tracker
@@ -54,20 +53,20 @@ Extract technologies from a JD and identify skill gaps against the candidate's c
    - 🟠 Significant — Required, partial/related experience only
    - 🟡 Moderate — Required or preferred, conceptual understanding but no hands-on
    - 🟢 Small — Known technology or trivial to pick up
-5. **Output:** Gap analysis table saved to `tech learning/plans/[company]-[role]-gaps.md`
+5. **Output:** Gap analysis table saved to `upskilling/plans/[company]-[role]-gaps.md`
 
 ### `design learning project for [technology or gap]`
 
 Design a hands-on project to close a specific skill gap.
 
-1. **Load the gap analysis** from `tech learning/plans/` if it exists
+1. **Load the gap analysis** from `upskilling/plans/` if it exists
 2. **Design a project** that:
    - Uses the target technology in a realistic, production-adjacent way
    - Is domain-relevant to the target company (if known)
    - Produces an artifact that's discussable in interviews
    - Takes 1-3 evenings to complete
    - Has clear learning outcomes and interview talking points
-3. **Output:** Project plan saved to `tech learning/plans/[project-name].md` with:
+3. **Output:** Project plan saved to `upskilling/plans/[project-name].md` with:
    - Architecture diagram (ASCII)
    - Tech stack
    - Key learning outcomes
@@ -83,13 +82,13 @@ Full pipeline: analyze gaps + design learning projects for all 🔴 and 🟠 gap
 2. For each 🔴 Critical and 🟠 Significant gap, run `design learning project`
 3. Determine suggested build order (dependencies between projects)
 4. Include quick wins (non-project resources for 🟡 Moderate gaps)
-5. **Output:** Combined plan at `tech learning/plans/[company]-[role]-skills.md`
+5. **Output:** Combined plan at `upskilling/plans/[company]-[role]-skills.md`
 
 ### `track progress`
 
 Update and display skill development progress.
 
-1. Read `tech learning/progress.md`
+1. Read `upskilling/progress.md`
 2. Show status of all active learning projects
 3. For each: Not Started / In Progress / Complete
 4. Highlight what's next in the build order
@@ -99,7 +98,7 @@ Update and display skill development progress.
 
 Mark a learning project as complete and update progress.
 
-1. Update status in `tech learning/progress.md`
+1. Update status in `upskilling/progress.md`
 2. Record key takeaways and interview talking points
 3. Suggest next project in build order
 4. **Output:** Updated progress summary
