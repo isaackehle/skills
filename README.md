@@ -1,87 +1,63 @@
-# Skills
+# skills
 
-Skills I have developed and hope others might find useful.
+Public skill library — reusable agent skills, scrubbed of fleet-specific
+and personal detail.
 
-## Repository layout
+## Convention
 
-This repository is a shared library of installable skills.
+Two repos, one rule:
 
-Each top-level skill is intended to be usable as its own grouped skill folder, typically with:
+| Repo                  | Visibility | Contents                                                                                                                                                                                                                                   |
+| --------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `skills/` (this repo) | Public     | Generic, reusable skills. Nothing here names a machine, IP address, Tailscale hostname, vault path, credential reference, or personal detail (job search, comp, health, family). Everything here should be safe to paste into a blog post. |
+| `skills-private/`     | Private    | Skills carrying fleet specifics, personal context, or anything that fails the blog-post test.                                                                                                                                              |
 
-- `SKILL.md`
-- `{templates_folder}`
-- `{references_folder}`
-- `examples/`
-- `docs/`
-- `scripts/`
+**Sorting rule of thumb:** anything naming a machine, IP, vault path, or
+personal circumstance goes in `skills-private/`. When in doubt, private —
+promote to public only deliberately, after scrubbing.
 
-## Current skills
+**Scrubbing standard:** skills promoted from private to public must have
+machine names replaced with hardware-tier placeholders, IPs/hostnames
+replaced with `<example>` values, and secrets referenced only as
+environment variable names — never values, never vault item paths.
 
-### `job-search`
+## Deployment
 
-An end-to-end job-search workflow skill covering:
+Skills are consumed by tools (Hermes, etc.) via **symlinks** from their
+runtime skill directories into this repo:
 
-- opportunity evaluation
-- resume tailoring
-- recruiter and interview prep
-- live interview note-taking
-- post-interview debrief
-- private personalization support
-
-Key files:
-
-- `job-search/SKILL.md`
-- `{templates_folder}`
-- `{references_folder}`
-- `job-search/examples/`
-- `job-search/scripts/`
-
-## Public vs private
-
-This repository contains reusable skill logic and non-sensitive examples.
-
-Keep personal values outside the repo, such as:
-
-- compensation floor
-- exact location constraints
-- accommodation needs
-- private negotiation preferences
-- sensitive career decision criteria
-
-## Installation concept
-
-This repo is designed to work well as a source library.
-
-A typical installation pattern is to copy a top-level skill folder into a local skills directory, for example:
-
-```text
-~/.claude/skills/job-search/
-~/.config/opencode/skills/job-search/
-~/.agents/skills/job-search/
+```bash
+ln -s ~/code/isaackehle/skills/<skill-name> ~/.hermes/skills/<skill-name>
 ```
 
-The installed skill folder should contain `SKILL.md` at its root.
+This repo is the source of truth. Never edit a skill through its symlink
+target path in a tool's runtime directory during agent sessions — edit
+here, commit, and the symlink picks it up.
 
-## Templates
+## Skill structure
 
-Templates for the different areas live under the `templates` folder:
+Each skill is a directory containing at minimum a `SKILL.md` with
+frontmatter:
+
+```markdown
+---
+name: skill-name
+version: 1.0
+category: category-name
+description: One line description
+---
+```
+
+Optional: `references/` for supporting docs, `scripts/` for executables.
+No `.bak` files (git history serves that purpose), no `.DS_Store`
+(gitignored).
+
+## Plan documents
+
+Any plan document in this repo follows the standard header:
 
 ```shell
-job-search/
-├── README.md
-├── SKILL.md
-├── templates/
-│   ├── candidate-profile.template.md
-│   ├── company-note.template.md
-│   ├── interview-stage.template.md
-│   ├── live-notes.template.md
-│   └── recruiter-screen.template.md
+Created: YYYY-MM-DD
+Completed: YYYY-MM-DD  (or — if not yet complete)
+Status: Complete | In progress — <reason> | Blocked — <reason>
 ```
-
-| File                          | Purpose                                                                                       |
-| ----------------------------- | --------------------------------------------------------------------------------------------- |
-| candidate-profile.template.md | Public-safe placeholder for private candidate context and guardrails paste.txt                |
-| company-note.template.md      | Main company research/evaluation note with score, status, links, and findings paste.txt       |
-| interview-stage.template.md   | Prep + debrief doc for a specific round or stage paste.txt                                    |
-| live-notes.template.md        | In-call scratchpad for realtime capture during interviews paste.txt                           |
-| recruiter-screen.template.md  | Specialized external recruiter screen doc with comp, timeline, and signal gathering paste.txt |

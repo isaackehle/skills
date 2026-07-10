@@ -231,7 +231,7 @@ If any role still shows a status of "Applied", the skill should prompt you to ch
 
 **Role-level archiving:** When individual roles within a company are no longer in play (rejected, withdrawn, lapsed, expired, or otherwise inactive), move those role files from `companies/<snake_case>/roles/` to `companies/<snake_case>/archive/`. Remove their rows from the comparison-matrix.md. Keep the company in `companies/` as long as it has at least one active role.
 
-**Auto-archive rule:** When a role is updated to ❌ Rejected, ➡️ Withdrawn, or ⏱️ Lapsed, automatically check whether any Active or Potential roles remain for that company. If this was the last role, automatically archive the entire company: move the folder from `companies/<snake_case>/` to `archive/<snake_case>/`, update the company markdown file status to Archived, and ensure the matrix row is in the Archived section.
+**Auto-archive rule:** When a role is updated to ❌ Rejected, ➡️ Withdrawn, ⏱️ Lapsed, or ⏱️ Elapsed, automatically check whether any Active or Potential roles remain for that company. If this was the last role, automatically archive the entire company: move the folder from `companies/<snake_case>/` to `archive/<snake_case>/`, update the company markdown file status to Archived, and ensure the matrix row is in the Archived section.
 
 **Implementation note:** When updating the tables, scan both the `roles/` and `archive/` subfolders of the company directory, collect all role markdown files, and rebuild the **Active Positions** and **Closed / Archived Positions** tables from scratch, ensuring no duplicate entries appear.
 
