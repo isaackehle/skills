@@ -34,11 +34,19 @@ Increment version suffix on substantive changes: `[CandidateName]-1978573-v2.md`
 
 ## DOCX Styling
 
-- Font: Arial 11pt or 12pt
-- Section header color: blue `#2E5FA3` with bottom border
-- Margins: 1 inch all sides
-- Page size: US Letter
-- ATS-friendly: no tables for layout, no text boxes, no graphics, no icons, no columns
+- **Font:** Calibri throughout
+- **Margins:** 0.625" L/R, 0.43" T/B, US Letter
+- **Name:** 17pt bold black (#000000), centered
+- **Role line:** 10pt bold #1F3864, centered
+- **Contact bar:** 9pt, #444444 with · separators, #1F3864 bottom border (sz 8)
+- **Section headers:** 10.5pt bold #1F3864, bottom border (sz 6), 9pt before / 4.5pt after
+- **Job lines:** company 10.5pt bold black, ` — ` 10pt, location 10pt italic, dates 9.5pt #444444
+- **Role titles:** 10pt bold italic #1F3864
+- **Bullets:** 10pt, `List Bullet` style, 3.5pt after
+- **Embedded entries:** 9.5pt plain paragraphs (company bold black, dates gray, role bold italic)
+- **Body text:** 10pt black (#000000)
+- **Clearance line:** 10pt bold #1F3864
+- **ATS-friendly:** no tables for layout, no text boxes, no graphics, no icons, no columns
 
 ## Tailoring Workflow
 

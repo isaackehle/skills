@@ -43,17 +43,18 @@ Content paragraph.
 
 ## Formatting Applied
 
-| Element            | Font  | Size   | Color           | Style                    |
-| ------------------ | ----- | ------ | --------------- | ------------------------ |
-| Name               | Arial | 18pt   | #2E5FA3 (blue)  | Bold, Centered           |
-| Subtitle           | Arial | 11pt   | #2E5FA3 (blue)  | Bold, Centered           |
-| Contact            | Arial | 9pt    | #444444 (gray)  | Regular, Centered        |
-| Section Headers    | Arial | 10.5pt | #2E5FA3 (blue)  | Bold, with bottom border |
-| Job Headers (###)  | Arial | 10pt   | #000000 (black) | Bold                     |
-| Company/Date lines | Arial | 9pt    | #444444 (gray)  | Italic                   |
-| Bullets            | Arial | 9.5pt  | #000000 (black) | Regular, with • prefix   |
-| Bold bullet prefix | Arial | 9.5pt  | #000000 (black) | Bold                     |
-| Body text          | Arial | 9.5pt  | #000000 (black) | Regular                  |
+|| Element            | Font   | Size   | Color           | Style                    |
+| ------------------ | ------ | ------ | --------------- | ------------------------ |
+| Name               | Calibri| 17pt   | #000000 (black) | Bold, Centered           |
+| Role line          | Calibri| 10pt   | #1F3864         | Bold, Centered           |
+| Contact            | Calibri| 9pt    | #444444 (gray)  | Regular, Centered        |
+| Section Headers    | Calibri| 10.5pt | #1F3864         | Bold, with bottom border |
+| Job lines          | Calibri| 10.5pt | #000000 (black) | Bold (company), Italic (location) |
+| Dates              | Calibri| 9.5pt  | #444444 (gray)  | Regular                  |
+| Role titles        | Calibri| 10pt   | #1F3864         | Bold Italic              |
+| Bullets            | Calibri| 10pt   | #000000 (black) | Regular, `List Bullet`   |
+| Embedded entries   | Calibri| 9.5pt  | #000000 (black) | Plain paragraphs         |
+| Body text          | Calibri| 10pt   | #000000 (black) | Regular                  |
 
 ## Spacing
 
