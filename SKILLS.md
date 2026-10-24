@@ -5,14 +5,12 @@
 | [career-ops](career-ops/SKILL.md)                               | Job search: scoring, JD analysis, resume tailoring and verification, interviews, offers, pipeline |
 | [career-upskill-tracker](career-upskill-tracker/skill.md)       | Learning plans, courses, certificates, daily check-ins                        |
 | [tech-skill-development](tech-skill-development/SKILL.md)       | Turning JD tech gaps into learning projects                                   |
-| [docx](docx/SKILL.md)                                           | Reading, creating, and editing Word documents                                 |
 | [inbox-processing-system](inbox-processing-system/SKILL.md)     | Routing incoming links, ideas, and research                                   |
 | [obsidian-markdown-discovery](obsidian-markdown-discovery/SKILL.md) | Obsidian-flavored markdown                                                |
 | [mermaid-theme](mermaid-theme/SKILL.md)                         | A Mermaid color theme for inference architecture diagrams                     |
 | [semantic-versioning](semantic-versioning/SKILL.md)             | Semver bumps and release notes                                                |
 | [writing-plans-superpowers](writing-plans-superpowers/SKILL.md) | Writing an implementation plan from a spec                                    |
-| [executing-plans](executing-plans/SKILL.md)                     | Executing a written plan in a separate session                                |
-| [executing-plans-superpowers](executing-plans-superpowers/SKILL.md) | Same, with review checkpoints                                             |
+| [executing-plans-superpowers](executing-plans-superpowers/SKILL.md) | Executing a written plan in a separate session, with review checkpoints   |
 | [subagent-driven-development](subagent-driven-development/SKILL.md) | Executing a plan's independent tasks with subagents                       |
 | [find-skills](find-skills/SKILL.md)                             | Finding an existing skill for a task                                          |
 | [deprecation-statement](deprecation-statement/SKILL.md)         | Marking a file deprecated                                                     |
@@ -29,6 +27,14 @@ These were folded into `career-ops` and removed: `job-search`, `resume-tailor`, 
 
 Dropped as out of scope: `academic-cv-builder`, `executive-resume-writer`, `creative-portfolio-resume`,
 `career-changer-translator`, `linkedin-profile-optimizer`, `portfolio-case-study-writer`, `reference-list-builder`.
+
+`docx` was removed: it is Anthropic's skill, licensed all rights reserved, and is built in. `executing-plans` was a
+duplicate of `executing-plans-superpowers`.
+
+The three `*-superpowers` / `subagent-driven-development` skills are adapted from
+[obra/superpowers](https://github.com/obra/superpowers) (MIT; license in each folder). They reference other superpowers
+skills (`using-git-worktrees`, `finishing-a-development-branch`) that aren't in this repo; install upstream for the full
+set.
 
 `resume-quantifier` is not carried forward in any form. It taught estimating numbers when none existed, which
 `career-ops` forbids.
