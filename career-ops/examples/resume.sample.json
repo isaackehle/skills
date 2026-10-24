@@ -1,0 +1,44 @@
+{
+  "name": "Jordan Rivera",
+  "headline": "Staff Software Engineer | Backend | Event-Driven Systems",
+  "contact": ["Springfield, ST", "555-0100", "jordan@example.com", "linkedin.com/in/example"],
+  "summary": {
+    "text": "Backend engineer who traces performance problems to their root and sets integration standards other teams adopt. Works in TypeScript, Node.js, PostgreSQL, and AWS messaging.",
+    "src": ["northwind-1", "northwind-2"]
+  },
+  "highlights": {
+    "heading": "Technical Direction",
+    "items": [
+      { "label": "Standards", "text": "wrote the event schema and versioning standard adopted by three teams", "src": ["northwind-2"] }
+    ]
+  },
+  "skills": [
+    { "label": "Languages", "items": ["TypeScript", "Python", "SQL"] },
+    { "label": "Data and Messaging", "items": ["PostgreSQL", "AWS SNS/SQS", "JSON Schema"] }
+  ],
+  "experience": [
+    {
+      "company": "Northwind Traders",
+      "agency": "Staffing Co",
+      "location": "Remote",
+      "dates": "Jan 2024 – Present",
+      "title": "Staff Software Engineer",
+      "bullets": [
+        { "text": "Cut order-history API p95 latency from 1.2s to 300ms by moving filtering into **PostgreSQL window functions** and adding targeted indexes", "src": ["northwind-1"] },
+        { "text": "Led the event schema, versioning, and dead-letter standard for three teams' SNS/SQS integrations", "src": ["northwind-2"] }
+      ]
+    },
+    {
+      "company": "Contoso",
+      "location": "Springfield, ST",
+      "dates": "Mar 2019 – Dec 2023",
+      "title": "Senior Software Engineer",
+      "bullets": [
+        { "text": "Built an event-driven proof of concept to replace a vendor scanning flow, validated on real handheld scanners", "src": ["contoso-1"] }
+      ]
+    }
+  ],
+  "education": ["BS, Computer Science | State University"],
+  "notes": ["Sample data for an invented person."],
+  "questions": []
+}

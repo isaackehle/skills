@@ -1,0 +1,68 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "style": "warn",
+    "perf": "off",
+    "pedantic": "warn"
+  },
+  "rules": {
+    "eslint/no-magic-numbers": [
+      "warn",
+      {
+        "ignore": [-1, 0, 1, 2, 3, 60, 80, 40, 15, 4, 20, 24, 400, 401, 403, 404, 500, 1000],
+        "ignoreArrayIndexes": true,
+        "ignoreDefaultValues": true,
+        "ignoreEnums": true,
+        "ignoreNegativeNumericLiteral": false,
+        "ignoreReadonlyClassProperties": true,
+        "ignorePattern": ""
+      }
+    ],
+    "eslint/no-underscore-dangle": "off",
+    "eslint/id-length": [
+      "warn",
+      { "min": 1, "exceptions": ["x", "y", "z", "i", "j", "k", "d", "t", "n", "e", "err"] }
+    ],
+    "eslint/no-ternary": "off",
+    "eslint/no-inline-comments": "warn",
+    "eslint/func-style": "warn",
+    "eslint/max-statements": ["warn", { "max": 20 }],
+    "eslint/max-lines-per-function": ["warn", { "max": 100 }],
+    "eslint/max-lines": ["warn", { "max": 1500 }],
+    "typescript/ban-ts-comment": "off",
+    "unicorn/prefer-export-from": "warn",
+    "unicorn/no-null": "warn",
+    "unicorn/catch-error-name": ["warn", { "name": "error" }],
+    "eslint/prefer-template": "warn",
+    "eslint/prefer-destructuring": "warn",
+    "eslint/no-await-in-loop": "warn",
+    "eslint/no-continue": "warn",
+    "eslint/no-nested-ternary": "warn",
+    "eslint/init-declarations": "warn",
+    "unicorn/prefer-single-call": "warn",
+    "unicorn/no-unreadable-iife": "warn",
+    "unicorn/no-immediate-mutation": "warn",
+    "unicorn/prefer-top-level-await": "warn",
+    "eslint/sort-imports": "warn",
+    "eslint/require-unicode-regexp": "warn",
+    "eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }]
+  },
+  "env": {
+    "builtin": true
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    ".obsidian/",
+    ".opencode/",
+    "builder/",
+    ".kilo/",
+    ".hermes/",
+    ".next/",
+    "outputs/",
+    "*.docx",
+    ".DS_Store"
+  ]
+}

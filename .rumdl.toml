@@ -1,0 +1,6 @@
+[global]
+line-length = 120
+respect-gitignore = true
+
+[MD013]
+reflow = true

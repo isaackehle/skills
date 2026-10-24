@@ -1,0 +1,21 @@
+{
+  "name": "skills",
+  "version": "1.0.0",
+  "description": "Public skill library for AI agents",
+  "private": true,
+  "devDependencies": {
+    "oxfmt": "^0.15.0",
+    "oxlint": "^0.15.0",
+    "rumdl": "^0.2.72",
+    "docx": "^9.5.0"
+  },
+  "scripts": {
+    "lint": "oxlint --config oxlintrc.json",
+    "lint:md": "rumdl check",
+    "lint:md:fix": "rumdl check --fix",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "check:private": "career-ops/scripts/check-private-terms.sh --all",
+    "test:career-ops": "node career-ops/scripts/verify-resume.js career-ops/examples/resume.sample.json --inventory career-ops/templates/experience-inventory.template.md --rules career-ops/templates/resume-rules.template.md --keywords career-ops/examples/keywords.sample.txt"
+  }
+}
