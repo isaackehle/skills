@@ -21,9 +21,15 @@ function args(argv) {
   return o;
 }
 
+// "July 2023", "Jul 2023", and "Jul. 2023" all compare equal.
+const MONTHS =
+  /\b(jan)(?:uary)?\b\.?|\b(feb)(?:ruary)?\b\.?|\b(mar)(?:ch)?\b\.?|\b(apr)(?:il)?\b\.?|\b(may)\b|\b(jun)e?\b\.?|\b(jul)y?\b\.?|\b(aug)(?:ust)?\b\.?|\b(sep)(?:t|tember)?\b\.?|\b(oct)(?:ober)?\b\.?|\b(nov)(?:ember)?\b\.?|\b(dec)(?:ember)?\b\.?/g;
+const shortMonth = (m, ...g) => g.slice(0, 12).find(Boolean);
+
 const norm = (s) =>
   String(s)
     .toLowerCase()
+    .replace(MONTHS, shortMonth)
     .replace(/[–—]/g, '-')
     .replace(/\*\*/g, '')
     .replace(/(\d),(\d)/g, '$1$2')
@@ -34,7 +40,9 @@ function parseInventory(text) {
   const entries = new Map();
   let id = null;
   let buf = [];
-  const flush = () => id && entries.set(id, norm(buf.join('\n')));
+  // "- **Not:** ..." lists claims known to be false; they must never satisfy a check.
+  const stripNot = (t) => t.replace(/^- \*\*Not:\*\*[\s\S]*?(?=\n- \*\*|\n#|$)/gim, '');
+  const flush = () => id && entries.set(id, norm(stripNot(buf.join('\n'))));
   for (const line of text.split('\n')) {
     const m = line.match(/^#{2,4}\s+\[([a-z0-9][a-z0-9-]*)\]/i);
     if (m) {
