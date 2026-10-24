@@ -31,6 +31,15 @@ When updating a skill:
 - provide examples with fake or placeholder values only
 - document how a user should personalize the skill locally
 
+## Commits
+
+Every commit in this repository is authored and committed by the repository owner, `isaackehle`.
+
+- Use the git identity already configured in the clone. Never set, override, or pass a different author or committer.
+- Never add AI attribution: no `Co-Authored-By` trailers for an agent, no session links, no "Generated with" lines, in
+  commit messages or pull request descriptions.
+- If the configured identity is not the owner's, stop and ask instead of committing.
+
 ## Runtime guidance
 
 This repository is a source library. The usual workflow is:
