@@ -15,6 +15,7 @@
 | [find-skills](find-skills/SKILL.md)                             | Finding an existing skill for a task                                          |
 | [deprecation-statement](deprecation-statement/SKILL.md)         | Marking a file deprecated                                                     |
 | [auto-rename-screenshots](auto-rename-screenshots/SKILL.md)     | HEIC to PNG, OCR, and rename                                                  |
+| [hebrew-pdf-ocr](hebrew-pdf-ocr/SKILL.md)                       | Batch OCR on scanned PDFs with Hebrew + English using OCRmyPDF + Tesseract    |
 | [zsh-pitfalls](zsh-pitfalls/SKILL.md)                           | zsh behaviors that break scripts                                              |
 
 ## Retired
