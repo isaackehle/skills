@@ -14,6 +14,8 @@ Capture a call as it happens: fast, factual, marked up, with no interpretation.
 
 ## Steps
 
+0. If `discussions/call-questions-YYYY-MM-DD.md` exists for this call, link it at the top of the notes and use its
+   questions as the `IQ:` prompts.
 1. Create `{companies}/<company>/discussions/live-notes-YYYY-MM-DD.md` from `templates/live-notes.template.md`. Create
    the company folder if it's missing.
 2. During the call, append what the user sends using the markers (`Q:`, `A:`, `IQ:`, `IR:`, `RF:`, `GF:`, `FU:`,

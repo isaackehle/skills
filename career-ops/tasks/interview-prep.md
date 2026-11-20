@@ -31,6 +31,9 @@ Prepare for one interview stage at one company.
 
 ## Output
 
+After writing the prep file, run [call-questions](call-questions.md) on the questions to ask (it follows the
+`call_questions` setting).
+
 `{companies}/<company>/interviews/<stage>-<YYYY-MM-DD>.md` in the reference's structure.
 
 ## Never

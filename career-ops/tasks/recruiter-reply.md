@@ -21,6 +21,8 @@ Reply to recruiter outreach. Get the facts needed to judge fit before spending a
    5. **Program or team:** what the team does and who it serves (add this when the posting is vague).
 2. Skip any question the message already answers. Keep it short and in the profile's voice.
 3. Record the contact with [company-records](company-records.md).
+4. When the reply holds questions for a call (the user says "add to the questions for the call", or a call is set), run
+   [call-questions](call-questions.md) so they land on the in-call sheet.
 
 ## Output
 

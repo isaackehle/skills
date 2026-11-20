@@ -35,7 +35,8 @@ Decide whether a posting is worth pursuing: quick screen, focused research, scor
 
 Write `{companies}/<company>/roles/<role-id>-scoring.md`: header (posting, date, status Exploring, comp, location,
 level), scorecard table with evidence, recommendation, key risks, key opportunities, blockers, screen questions, and
-talking points. Then offer [pipeline](pipeline.md) to add it to the matrix.
+talking points. Then run [call-questions](call-questions.md) on the screen questions (it asks once whether the user wants
+the sheet, then follows `call_questions`), and offer [pipeline](pipeline.md) to add it to the matrix.
 
 ## Never
 
