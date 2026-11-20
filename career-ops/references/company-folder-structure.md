@@ -16,6 +16,7 @@ companies/<snake_case>/
 │   └── <contact_name>.md
 ├── discussions/                       # Call transcripts, live notes
 │   ├── call-YYYY-MM-DD.md
+│   ├── call-questions-YYYY-MM-DD.md
 │   └── live-notes-YYYY-MM-DD.md
 ├── interviews/                        # Interview prep/debriefs
 │   └── <Stage>-YYYY-MM-DD.md
@@ -76,6 +77,7 @@ companies/<snake_case>/
 - **Purpose:** Call transcripts and live note-taking sessions
 - **Filename conventions:**
   - `call-YYYY-MM-DD.md` - Full call transcripts
+  - `call-questions-YYYY-MM-DD.md` - One-page questions sheet to keep open during a call
   - `live-notes-YYYY-MM-DD.md` - Live notes during a call/meeting
 - **Date format:** ISO 8601 (YYYY-MM-DD)
 
