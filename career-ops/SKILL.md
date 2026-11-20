@@ -27,6 +27,7 @@ workspace (see [Config](#config)).
 | [cover-letter](tasks/cover-letter.md)               | A cover letter or application answer is needed     | Isolated task, verified |
 | [recruiter-reply](tasks/recruiter-reply.md)         | Replying to recruiter outreach                     | Main                    |
 | [interview-prep](tasks/interview-prep.md)           | Preparing for an interview stage                   | Main                    |
+| [call-questions](tasks/call-questions.md)           | Questions to ask turned into an in-call sheet      | Main                    |
 | [live-notes](tasks/live-notes.md)                   | Taking notes during a call                         | Main                    |
 | [debrief](tasks/debrief.md)                         | After an interview or call                         | Main                    |
 | [negotiate](tasks/negotiate.md)                     | Comp discussion, offer, or comparing offers        | Main                    |
@@ -38,7 +39,8 @@ workspace (see [Config](#config)).
 - **Resume for a JD:** analyze-jd → tailor-resume → verify-resume → (user approves) → build-resume. Never skip verify.
   Never build before the user approves the verified markdown.
 - **New posting:** score-posting → pipeline (add) → and, if pursuing, the resume chain.
-- **Interview loop:** interview-prep → live-notes → debrief → pipeline (rescore/status).
+- **Interview loop:** interview-prep → call-questions → live-notes → debrief → pipeline (rescore/status).
+- **Recruiter call:** score-posting or recruiter-reply (questions) → call-questions → live-notes → debrief.
 
 ### What "Runs as" means
 
@@ -65,6 +67,7 @@ On the first task in a session, resolve these. Read before asking; ask only for 
 | `resumes`     | `{workspace}/resumes`           | Inventory, base resumes, stories                          |
 | `companies`   | `{workspace}/companies`         | One folder per company                                    |
 | `auto_research` | `ask`                         | `ask` = confirm before web research; `auto` = proceed     |
+| `call_questions` | `ask`                        | `ask` = offer an in-call question sheet once; `auto` = create it whenever questions are produced; `off` = only on request |
 
 Private files the tasks read (templates in [templates/](templates/)):
 

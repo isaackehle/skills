@@ -11,3 +11,4 @@
 - resumes: /path/to/job_search/resumes
 - companies: /path/to/job_search/companies
 - auto_research: ask
+- call_questions: ask
